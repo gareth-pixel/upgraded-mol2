@@ -50,7 +50,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '初始化训练...' });
       const newMetrics = await handleTrain(e.target.files[0], currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setMetrics(newMetrics);
-      setStatus({ type: 'success', msg: '岭回归模型训练完成！特征已自动标准化。' });
+      setStatus({ type: 'success', msg: `模型训练完成！使用 ${currentModel === ModelType.ONLINE ? 'XGBoost (非线性)' : 'Ridge (线性)'} 引擎。` });
       setPreviewData(null); 
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '训练失败' });
@@ -96,7 +96,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '正在预测...' });
       const results = await handlePredict(file, currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setPreviewData(results);
-      setStatus({ type: 'success', msg: '预测完成！基于岭回归线性权重计算。' });
+      setStatus({ type: 'success', msg: '预测完成！基于集成树/线性权重计算。' });
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '预测失败' });
     } finally {
@@ -123,7 +123,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '发布云端...' });
       const data = await getModelExportData(currentModel);
       if (!data) throw new Error("无数据");
-      await uploadToGitHub(ghConfig, data, `Update ${MODEL_CONFIGS[currentModel].name} Ridge model`);
+      await uploadToGitHub(ghConfig, data, `Update ${MODEL_CONFIGS[currentModel].name} model parameters`);
       setStatus({ type: 'success', msg: `发布成功！` });
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message });
@@ -134,13 +134,13 @@ const App: React.FC = () => {
     try {
       setStatus({ type: 'loading', msg: '同步云端...' });
       const remoteJson = await fetchFromGitHub(ghConfig);
-      if (!remoteJson) throw new Error("远程为空");
+      if (!remoteJson) throw new Error("远程文件未找到或为空");
       const newMetrics = await restoreModelFromRemote(currentModel, remoteJson, (msg) => setStatus({ type: 'loading', msg }));
       if (newMetrics) {
         setMetrics(newMetrics);
         setStatus({ type: 'success', msg: '同步完成！' });
       } else {
-        setStatus({ type: 'error', msg: '未发现匹配数据' });
+        setStatus({ type: 'error', msg: '云端未发现当前子模型的数据' });
       }
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message });
@@ -156,8 +156,8 @@ const App: React.FC = () => {
               <Activity className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统</h1>
-              <p className="text-xs text-gray-500">Ridge Regression Predictor</p>
+              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.0</h1>
+              <p className="text-xs text-gray-500">Multi-Model Volume Forecaster</p>
             </div>
           </div>
           <button onClick={() => setShowSettings(!showSettings)} className="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100"><Settings size={20} /></button>
@@ -167,7 +167,7 @@ const App: React.FC = () => {
       {showSettings && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 space-y-4">
-            <h3 className="text-lg font-semibold flex items-center gap-2 border-b pb-2"><Github size={20} /> GitHub 配置</h3>
+            <h3 className="text-lg font-semibold flex items-center gap-2 border-b pb-2"><Github size={20} /> GitHub 同步配置</h3>
             <div className="space-y-3">
                <input placeholder="Repo Owner" className="w-full p-2 border rounded" value={ghConfig.owner} onChange={e => setGhConfig({...ghConfig, owner: e.target.value})} />
                <input placeholder="Repo Name" className="w-full p-2 border rounded" value={ghConfig.repo} onChange={e => setGhConfig({...ghConfig, repo: e.target.value})} />
@@ -176,7 +176,7 @@ const App: React.FC = () => {
             </div>
             <div className="flex justify-end gap-2">
               <Button variant="outline" size="sm" onClick={() => setShowSettings(false)}>取消</Button>
-              <Button variant="primary" size="sm" onClick={() => { saveGitHubConfig(ghConfig); setShowSettings(false); }}>保存</Button>
+              <Button variant="primary" size="sm" onClick={() => { saveGitHubConfig(ghConfig); setShowSettings(false); }}>保存配置</Button>
             </div>
           </div>
         </div>
@@ -206,7 +206,7 @@ const App: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
-            <Card title="岭回归状态">
+            <Card title="模型状态">
               {isInitializing ? <div className="py-12 flex justify-center"><Activity className="animate-spin text-brand-300" /></div> : metrics ? (
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
@@ -214,39 +214,43 @@ const App: React.FC = () => {
                     <div><p className="text-sm text-gray-500">MAE (平均误差)</p><p className="text-2xl font-bold">{metrics.mae.toFixed(2)}</p></div>
                   </div>
                   <div><p className="text-sm text-gray-500">训练样本量</p><p className="text-3xl font-bold">{metrics.sampleSize.toLocaleString()}</p></div>
-                  <Button variant="secondary" className="w-full" onClick={handleDownloadSummary} icon={<Download size={16} />}>下载参数权重</Button>
+                  <Button variant="secondary" className="w-full" onClick={handleDownloadSummary} icon={<Download size={16} />}>下载模型详情</Button>
                 </div>
               ) : <div className="text-center py-10 text-gray-400"><BarChart2 className="mx-auto mb-2" />模型待训练</div>}
             </Card>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-xs text-blue-800">
+            <div className="bg-brand-50 p-4 rounded-lg border border-brand-100 text-xs text-brand-800">
               <h4 className="font-bold flex items-center gap-2 mb-1"><AlertCircle size={14}/> 算法逻辑说明</h4>
-              <p>当前使用 <b>岭回归 (Ridge Regression)</b>。它通过线性组合派生特征进行预测，并使用 L2 正则化项防止权重过大。相比森林模型，它在小样本下更稳健且可解释性更高。</p>
+              {currentModel === ModelType.ONLINE ? (
+                <p>当前使用 <b>梯度提升回归树 (GBDT/XGBoost)</b>。通过多棵决策树集成学习，能够捕捉复杂的非线性关系。适合处理数据量大、关系复杂的在线业务场景。</p>
+              ) : (
+                <p>当前使用 <b>岭回归 (Ridge Regression)</b>。通过线性组合特征进行预测，并使用 L2 正则化防止过拟合。在样本量较小时具有极佳的稳定性与可解释性。</p>
+              )}
             </div>
           </div>
 
           <div className="lg:col-span-2 space-y-6">
             <Card title="数据学习">
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">上传 Excel 训练数据。系统将自动完成日均特征派生与 Z-Score 标准化。</p>
+                <p className="text-sm text-gray-600">上传 Excel 训练数据。系统将自动完成日均特征派生与模型拟合。</p>
                 <div className="flex flex-wrap gap-3">
                   <input type="file" ref={trainInputRef} onChange={onTrainFileChange} accept=".xlsx,.xls" className="hidden" />
                   <Button onClick={() => trainInputRef.current?.click()} icon={<Upload size={18} />}>上传并训练</Button>
-                  <Button onClick={handleCloudPretrain} variant="secondary" icon={<CloudDownload size={18} />}>从云端恢复</Button>
+                  <Button onClick={handleCloudPretrain} variant="secondary" icon={<CloudDownload size={18} />}>从云端同步</Button>
                   <Button variant="outline" onClick={generateTrainTemplate} icon={<FileSpreadsheet size={16}/>}>训练模板</Button>
                 </div>
                 <div className="pt-4 border-t flex justify-between gap-3">
                   <div className="flex gap-2">
                     <Button variant="secondary" size="sm" onClick={handleDownloadTrainData} icon={<Database size={14}/>}>导出数据库</Button>
-                    <Button variant="primary" size="sm" onClick={handlePublishToGitHub} icon={<CloudUpload size={14}/>} className="bg-gray-800">同步至云端</Button>
+                    <Button variant="primary" size="sm" onClick={handlePublishToGitHub} icon={<CloudUpload size={14}/>} className="bg-gray-800">发布至云端</Button>
                   </div>
-                  <Button variant="danger" size="sm" onClick={handleClearData} icon={<Trash2 size={14}/>} className="bg-red-50 text-red-600 border-red-200">清空模型</Button>
+                  <Button variant="danger" size="sm" onClick={handleClearData} icon={<Trash2 size={14}/>} className="bg-red-50 text-red-600 border-red-200">重置模型</Button>
                 </div>
               </div>
             </Card>
 
             <Card title="流量预测">
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">基于岭回归权重进行线性推理，输出 80% 置信区间预测结果。</p>
+                <p className="text-sm text-gray-600">基于已学习的权重/树路径进行推理，输出 80% 置信区间预测结果。</p>
                 <div className="flex gap-3">
                   <input type="file" ref={predictInputRef} onChange={onPredictFileChange} accept=".xlsx,.xls" className="hidden" />
                   <Button variant="primary" className="bg-purple-600 hover:bg-purple-700" onClick={() => predictInputRef.current?.click()} icon={<Activity size={18} />}>开始预测</Button>
@@ -256,7 +260,7 @@ const App: React.FC = () => {
             </Card>
 
             {previewData && (
-              <Card title="预测预览 (线性模型)" className="border-brand-200 ring-4 ring-brand-50">
+              <Card title="预测预览" className="border-brand-200 ring-4 ring-brand-50">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center text-sm">
                     <p>预测样本: <span className="font-bold">{previewData.length}</span></p>

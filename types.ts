@@ -1,8 +1,8 @@
 
 export enum ModelType {
-  ONLINE = 'rf_model_online',
+  ONLINE = 'xgboost_model_online',
   RECALL = 'rf_model_recall',
-  MIX = 'rf_model_mix',
+  TELECOM_ONLINE = 'rf_model_telecom',
 }
 
 export interface DataRow {
@@ -18,17 +18,36 @@ export interface TrainingMetrics {
 
 export interface RidgeModel {
   type: ModelType;
-  weights: number[];      // Coefficients for MODEL_FEATURES
-  intercept: number;      // Bias term
-  scaler: {               // Mean and Std for normalization
+  weights: number[];      
+  intercept: number;      
+  scaler: {               
     means: number[];
     stds: number[];
   };
-  residualStd: number;    // Used for confidence interval
+  residualStd: number;    
   metrics: TrainingMetrics;
 }
 
-// Features required in the input file (Raw Totals)
+export interface Tree {
+  featureIndex: number;
+  threshold: number;
+  leftValue?: number;
+  rightValue?: number;
+  left?: Tree;
+  right?: Tree;
+}
+
+export interface GBDTModel {
+  type: ModelType;
+  initialMean: number;
+  learningRate: number;
+  trees: Tree[];
+  residualStd: number;
+  metrics: TrainingMetrics;
+}
+
+export type ModelData = RidgeModel | GBDTModel;
+
 export const INPUT_FEATURES = [
   '采集天数',
   '笔记数',
@@ -37,7 +56,6 @@ export const INPUT_FEATURES = [
   '评论数'
 ];
 
-// Features actually used by the model
 export const MODEL_FEATURES = [
   '采集天数',
   '日均笔记数',

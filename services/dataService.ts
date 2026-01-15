@@ -1,11 +1,9 @@
 
 import * as XLSX from 'xlsx';
-import { DataRow, ModelType, TrainingMetrics, RidgeModel, INPUT_FEATURES, MODEL_FEATURES, TARGET } from '../types';
+import { DataRow, ModelType, TrainingMetrics, RidgeModel, GBDTModel, ModelData, INPUT_FEATURES, MODEL_FEATURES, TARGET } from '../types';
 import { STORAGE_KEYS, MODEL_CONFIGS } from '../constants';
-import { trainRidge, predictRidge, calculateR2, calculateMAE } from './mlEngine';
+import { trainRidge, predictRidge, trainGBDT, predictGBDT, calculateR2, calculateMAE } from './mlEngine';
 import { dbService } from './db';
-
-// --- Feature Engineering ---
 
 export const preprocessRow = (row: DataRow): DataRow => {
   const days = Math.max(0, Number(row['采集天数']) || 0);
@@ -16,8 +14,6 @@ export const preprocessRow = (row: DataRow): DataRow => {
   processed['日均评论数'] = days > 0 ? (Number(row['评论数']) || 0) / days : 0;
   return processed;
 };
-
-// --- Validation ---
 
 export const validateColumns = (row: any, isTraining: boolean): string | null => {
   const missing = [];
@@ -31,10 +27,8 @@ export const validateColumns = (row: any, isTraining: boolean): string | null =>
   return null;
 };
 
-// --- Operations ---
-
 export const getStoredMetrics = async (modelType: ModelType): Promise<TrainingMetrics | null> => {
-  const modelData = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as RidgeModel;
+  const modelData = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as ModelData;
   return modelData ? modelData.metrics : null;
 };
 
@@ -67,19 +61,26 @@ export const generatePredictionTemplate = () => {
 };
 
 export const downloadSummary = async (modelType: ModelType) => {
-  const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as RidgeModel;
+  const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as ModelData;
   if (!model) throw new Error("该模型暂无训练数据");
   
-  const content = {
-    "模型类型": "岭回归 (Ridge Regression)",
+  let content: any = {
+    "模型类型": modelType === ModelType.ONLINE ? "梯度提升回归树 (XGBoost)" : "岭回归 (Ridge Regression)",
     "子模型": MODEL_CONFIGS[modelType].name,
     "样本量": model.metrics.sampleSize,
-    "权重分配": MODEL_FEATURES.reduce((acc, f, i) => ({ ...acc, [f]: model.weights[i].toFixed(4) }), {}),
-    "截距": model.intercept.toFixed(4),
     "R²": model.metrics.r2.toFixed(4),
     "MAE": model.metrics.mae.toFixed(4),
     "更新时间": model.metrics.lastUpdated
   };
+
+  if (modelType !== ModelType.ONLINE) {
+    const ridge = model as RidgeModel;
+    content["权重分配"] = MODEL_FEATURES.reduce((acc, f, i) => ({ ...acc, [f]: ridge.weights[i].toFixed(4) }), {});
+    content["截距"] = ridge.intercept.toFixed(4);
+  } else {
+    content["树数量"] = (model as GBDTModel).trees.length;
+    content["学习率"] = (model as GBDTModel).learningRate;
+  }
   
   const blob = new Blob([JSON.stringify(content, null, 2)], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -101,14 +102,22 @@ export const trainFromData = async (
   onProgress?.("正在进行特征派生...");
   const processedData = data.map(preprocessRow);
 
-  onProgress?.(`正在执行岭回归训练 (样本量: ${data.length})...`);
+  onProgress?.(`正在执行模型训练 (样本量: ${data.length})...`);
   await new Promise(resolve => setTimeout(resolve, 100));
   
-  const ridgeParams = await trainRidge(processedData);
-  
-  onProgress?.("正在评估模型...");
+  let modelPayload: ModelData;
+  let predictions: number[];
   const yTrue = processedData.map(r => Number(r[TARGET]));
-  const predictions = processedData.map(r => predictRidge(ridgeParams, r).mean);
+
+  if (modelType === ModelType.ONLINE) {
+    const params = await trainGBDT(processedData);
+    predictions = processedData.map(r => predictGBDT(params, r).mean);
+    modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
+  } else {
+    const params = await trainRidge(processedData);
+    predictions = processedData.map(r => predictRidge(params, r).mean);
+    modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
+  }
   
   const metrics: TrainingMetrics = {
     r2: calculateR2(yTrue, predictions),
@@ -117,11 +126,7 @@ export const trainFromData = async (
     lastUpdated: new Date().toLocaleString()
   };
 
-  const modelPayload: RidgeModel = {
-    type: modelType,
-    ...ridgeParams,
-    metrics
-  };
+  modelPayload.metrics = metrics;
 
   onProgress?.("同步到本地数据库...");
   await dbService.saveData(STORAGE_KEYS.DATA(modelType), data);
@@ -151,8 +156,8 @@ export const handlePredict = async (
   modelType: ModelType,
   onProgress: (msg: string) => void
 ): Promise<DataRow[]> => {
-  onProgress("正在加载岭回归模型...");
-  const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as RidgeModel;
+  onProgress("正在加载预测模型...");
+  const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as ModelData;
   if (!model) throw new Error("该模型尚未训练。");
 
   onProgress("处理预测数据...");
@@ -163,7 +168,9 @@ export const handlePredict = async (
 
   const results = data.map(row => {
     const processedRow = preprocessRow(row);
-    const preds = predictRidge(model, processedRow);
+    const preds = modelType === ModelType.ONLINE 
+      ? predictGBDT(model as GBDTModel, processedRow)
+      : predictRidge(model as RidgeModel, processedRow);
     return {
       ...row,
       '预测采集量': Math.round(preds.mean),
@@ -179,8 +186,8 @@ export const exportPredictionResults = (results: DataRow[], originalFileName: st
   const ws = XLSX.utils.json_to_sheet(results);
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Predictions");
-  const modelSuffix = modelType.replace('rf_model_', '');
-  XLSX.writeFile(wb, `${originalFileName.split('.')[0]}_${modelSuffix}_ridge_predicted.xlsx`);
+  const modelSuffix = modelType.split('_')[0];
+  XLSX.writeFile(wb, `${originalFileName.split('.')[0]}_${modelSuffix}_predicted.xlsx`);
 };
 
 export const getModelExportData = async (modelType: ModelType) => {
@@ -200,7 +207,7 @@ export const restoreModelFromRemote = async (
 
   onProgress("正在恢复云端数据...");
   const data: DataRow[] = targetData.data || [];
-  const model: RidgeModel | null = targetData.model;
+  const model: ModelData | null = targetData.model;
 
   if (data.length > 0) await dbService.saveData(STORAGE_KEYS.DATA(modelType), data);
   if (model) {
