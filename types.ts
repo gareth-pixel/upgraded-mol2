@@ -16,26 +16,16 @@ export interface TrainingMetrics {
   lastUpdated: string;
 }
 
-export interface PredictionResult {
-  mean: number;
-  lowerBound: number; // 10%
-  upperBound: number; // 90%
-}
-
-export interface RandomForestModel {
+export interface RidgeModel {
   type: ModelType;
-  trees: DecisionTreeNode[];
+  weights: number[];      // Coefficients for MODEL_FEATURES
+  intercept: number;      // Bias term
+  scaler: {               // Mean and Std for normalization
+    means: number[];
+    stds: number[];
+  };
+  residualStd: number;    // Used for confidence interval
   metrics: TrainingMetrics;
-}
-
-// Minimal structure for a decision tree node
-export interface DecisionTreeNode {
-  isLeaf: boolean;
-  value?: number; // For leaf
-  feature?: string;
-  threshold?: number;
-  left?: DecisionTreeNode;
-  right?: DecisionTreeNode;
 }
 
 // Features required in the input file (Raw Totals)
@@ -47,7 +37,7 @@ export const INPUT_FEATURES = [
   '评论数'
 ];
 
-// Features actually used by the Random Forest model
+// Features actually used by the model
 export const MODEL_FEATURES = [
   '采集天数',
   '日均笔记数',
