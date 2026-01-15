@@ -5,6 +5,14 @@ import { STORAGE_KEYS, MODEL_CONFIGS } from '../constants';
 import { trainRidge, predictRidge, trainGBDT, predictGBDT, calculateR2, calculateMAE, GuardrailOptions } from './mlEngine';
 import { dbService } from './db';
 
+// Features used for Daily Intensity learning (RECALL model)
+const DAILY_GBDT_FEATURES = [
+  '日均笔记数',
+  '日均点赞数',
+  '日均收藏数',
+  '日均评论数'
+];
+
 export const preprocessRow = (row: DataRow): DataRow => {
   const days = Math.max(0, Number(row['采集天数']) || 0);
   const processed: DataRow = { ...row };
@@ -64,8 +72,10 @@ export const downloadSummary = async (modelType: ModelType) => {
   const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as ModelData;
   if (!model) throw new Error("该模型暂无训练数据");
   
+  const isRecall = modelType === ModelType.RECALL;
+
   let content: any = {
-    "模型类型": modelType === ModelType.ONLINE ? "梯度提升回归树 (XGBoost)" : "岭回归 (Ridge Regression)",
+    "模型类型": "梯度提升回归树 (XGBoost)",
     "子模型": MODEL_CONFIGS[modelType].name,
     "样本量": model.metrics.sampleSize,
     "R²": model.metrics.r2.toFixed(4),
@@ -73,21 +83,23 @@ export const downloadSummary = async (modelType: ModelType) => {
     "更新时间": model.metrics.lastUpdated
   };
 
-  if (modelType !== ModelType.ONLINE) {
-    const ridge = model as RidgeModel;
-    content["权重分配"] = RIDGE_FEATURES.reduce((acc, f, i) => ({ ...acc, [f]: ridge.weights[i].toFixed(4) }), {});
-    content["截距"] = ridge.intercept.toFixed(4);
-  } else {
-    const gbdt = model as GBDTModel;
-    content["算法特征 (不含天数)"] = gbdt.featureNames;
+  const gbdt = model as GBDTModel;
+  content["算法特征"] = gbdt.featureNames;
+  
+  if (isRecall) {
     content["稳健基线系数"] = {
-      "笔记效率 (k_notes)": gbdt.baselineCoeffs[0].toFixed(6),
-      "点赞效率 (k_likes)": gbdt.baselineCoeffs[1].toFixed(6)
+      "业务产出效率 (k_notes)": gbdt.baselineCoeffs[0].toFixed(6),
+      "业务产出效率 (k_likes)": gbdt.baselineCoeffs[1].toFixed(6)
     };
-    content["限幅说明"] = "支持在预测时动态配置 30%-170% 等限幅区间。";
-    content["树数量"] = gbdt.trees.length;
-    content["学习率"] = gbdt.learningRate;
+    content["预测逻辑"] = "周期强度学习 (Yield/Days) + 天数线性放大";
+    content["限幅说明"] = "支持在预测时动态配置限幅区间。";
+  } else {
+    content["预测逻辑"] = "单日总量直接推理 (Yield/1Day)";
+    content["限幅说明"] = "不适用 (采用纯模型原始输出)";
   }
+  
+  content["树数量"] = gbdt.trees.length;
+  content["学习率"] = gbdt.learningRate;
   
   const blob = new Blob([JSON.stringify(content, null, 2)], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -106,48 +118,44 @@ export const trainFromData = async (
 ): Promise<TrainingMetrics> => {
   if (data.length === 0) throw new Error("训练数据为空");
 
-  onProgress?.("正在进行特征处理...");
+  const isRecall = modelType === ModelType.RECALL;
+  
+  onProgress?.("正在进行特征预处理...");
   const processedData = data.map(preprocessRow);
 
-  onProgress?.(`正在执行模型训练 (样本量: ${data.length})...`);
+  onProgress?.(`正在执行模型训练 (模式: ${isRecall ? '强度学习' : '总量学习'})...`);
   await new Promise(resolve => setTimeout(resolve, 100));
   
-  let modelPayload: ModelData;
-  let predictions: number[];
-  const yTrueTotal = processedData.map(r => Number(r[TARGET]));
+  // Decide target and features based on model type
+  const trainingDataWithTarget = processedData.map(r => {
+    const days = isRecall ? Math.max(1, Number(r['采集天数']) || 1) : 1;
+    return {
+      ...r,
+      'TRAIN_TARGET': (Number(r[TARGET]) || 0) / days
+    };
+  });
 
-  if (modelType === ModelType.ONLINE) {
-    const trainingDataWithDailyTarget = processedData.map(r => {
-      const days = Math.max(1, Number(r['采集天数']) || 1);
-      return {
-        ...r,
-        'DAILY_YIELD_TARGET': (Number(r[TARGET]) || 0) / days
-      };
-    });
-
-    const params = await trainGBDT(trainingDataWithDailyTarget, GBDT_FEATURES, 'DAILY_YIELD_TARGET');
-    
-    predictions = processedData.map(r => {
-      const dailyPred = predictGBDT(params, r).mean;
-      const days = Number(r['采集天数']) || 0;
-      return dailyPred * days; 
-    });
-
-    modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
-  } else {
-    const params = await trainRidge(processedData);
-    predictions = processedData.map(r => predictRidge(params, r).mean);
-    modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
-  }
+  const featuresToUse = isRecall ? DAILY_GBDT_FEATURES : GBDT_FEATURES;
+  const params = await trainGBDT(trainingDataWithTarget, featuresToUse, 'TRAIN_TARGET');
   
+  const predictions = processedData.map(r => {
+    const basePred = predictGBDT(params, r, { enabled: false, lowPercent: 0, highPercent: 0 }).mean;
+    const days = isRecall ? (Number(r['采集天数']) || 0) : 1;
+    return basePred * days; 
+  });
+
   const metrics: TrainingMetrics = {
-    r2: calculateR2(yTrueTotal, predictions),
-    mae: calculateMAE(yTrueTotal, predictions),
+    r2: calculateR2(processedData.map(r => Number(r[TARGET])), predictions),
+    mae: calculateMAE(processedData.map(r => Number(r[TARGET])), predictions),
     sampleSize: data.length,
     lastUpdated: new Date().toLocaleString()
   };
 
-  modelPayload.metrics = metrics;
+  const modelPayload: GBDTModel = { 
+    type: modelType, 
+    ...params, 
+    metrics 
+  };
 
   onProgress?.("同步本地数据库...");
   await dbService.saveData(STORAGE_KEYS.DATA(modelType), data);
@@ -179,7 +187,7 @@ export const handlePredict = async (
   guardrailOptions?: GuardrailOptions
 ): Promise<DataRow[]> => {
   onProgress("正在加载预测模型...");
-  const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as ModelData;
+  const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as GBDTModel;
   if (!model) throw new Error("该模型尚未训练。");
 
   onProgress("执行预测计算...");
@@ -188,30 +196,30 @@ export const handlePredict = async (
   const error = validateColumns(data[0], false); 
   if (error) throw new Error(error);
 
+  const isRecall = modelType === ModelType.RECALL;
+
   const results = data.map(row => {
     const processedRow = preprocessRow(row);
-    let mean: number, lower: number, upper: number, isClipped = false;
+    
+    // Force guardrail off for non-recall models
+    const activeGuardrail = isRecall 
+      ? guardrailOptions 
+      : { enabled: false, lowPercent: 30, highPercent: 170 };
 
-    if (modelType === ModelType.ONLINE) {
-      const days = Number(row['采集天数']) || 0;
-      const preds = predictGBDT(model as GBDTModel, processedRow, guardrailOptions);
-      mean = preds.mean * days;
-      lower = preds.lowerBound * days;
-      upper = preds.upperBound * days;
-      isClipped = preds.isClipped;
-    } else {
-      const preds = predictRidge(model as RidgeModel, processedRow);
-      mean = preds.mean;
-      lower = preds.lowerBound;
-      upper = preds.upperBound;
-    }
+    const preds = predictGBDT(model, processedRow, activeGuardrail);
+    
+    // Scale only for RECALL model
+    const multiplier = isRecall ? (Number(row['采集天数']) || 0) : 1;
+    const mean = preds.mean * multiplier;
+    const lower = preds.lowerBound * multiplier;
+    const upper = preds.upperBound * multiplier;
 
     return {
       ...row,
       '预测采集量': Math.round(mean),
       '预测下限': Math.round(lower),
       '预测上限': Math.round(upper),
-      '_IS_CLIPPED': isClipped
+      '_IS_CLIPPED': preds.isClipped
     };
   });
 
@@ -222,7 +230,7 @@ export const exportPredictionResults = (results: DataRow[], originalFileName: st
   const ws = XLSX.utils.json_to_sheet(results.map(({ _IS_CLIPPED, ...rest }) => rest));
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Predictions");
-  const modelSuffix = modelType.split('_')[0];
+  const modelSuffix = modelType.split('_')[1] || 'model';
   XLSX.writeFile(wb, `${originalFileName.split('.')[0]}_${modelSuffix}_predicted.xlsx`);
 };
 

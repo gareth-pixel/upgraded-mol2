@@ -56,7 +56,8 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '初始化训练...' });
       const newMetrics = await handleTrain(e.target.files[0], currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setMetrics(newMetrics);
-      setStatus({ type: 'success', msg: `模型训练完成！${currentModel === ModelType.ONLINE ? '已应用：天数线性放大 + 基线系数提取。' : ''}` });
+      const modeDesc = currentModel === ModelType.RECALL ? "已启用日均强度学习与天数放大" : "已启用总量直接推理";
+      setStatus({ type: 'success', msg: `模型训练完成！${modeDesc}。` });
       setPreviewData(null); 
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '训练失败' });
@@ -104,14 +105,14 @@ const App: React.FC = () => {
         file, 
         currentModel, 
         (msg) => setStatus({ type: 'loading', msg }),
-        currentModel === ModelType.ONLINE ? {
+        {
           enabled: guardrailEnabled,
           lowPercent,
           highPercent
-        } : undefined
+        }
       );
       setPreviewData(results);
-      setStatus({ type: 'success', msg: `预测完成！${guardrailEnabled ? '已应用基线限幅。' : '当前使用原始模型输出。'}` });
+      setStatus({ type: 'success', msg: `预测完成！` });
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '预测失败' });
     } finally {
@@ -162,6 +163,8 @@ const App: React.FC = () => {
     }
   };
 
+  const isDailyMode = currentModel === ModelType.RECALL;
+
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
@@ -171,8 +174,8 @@ const App: React.FC = () => {
               <Activity className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.1</h1>
-              <p className="text-xs text-gray-500">Enhanced Linear Scaling Predictor</p>
+              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.4</h1>
+              <p className="text-xs text-gray-500">Hybrid Intensity & Total Yield Predictor</p>
             </div>
           </div>
           <button onClick={() => setShowSettings(!showSettings)} className="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100"><Settings size={20} /></button>
@@ -235,21 +238,29 @@ const App: React.FC = () => {
             </Card>
             <div className="bg-brand-50 p-4 rounded-lg border border-brand-100 text-xs text-brand-800">
               <h4 className="font-bold flex items-center gap-2 mb-1"><AlertCircle size={14}/> 算法逻辑说明</h4>
-              {currentModel === ModelType.ONLINE ? (
-                <div className="space-y-2">
-                  <p><b>XGBoost + 物理常识校准：</b></p>
-                  <p>系统自动将训练数据转为“日均”量级。预测时，先计算指标强度对应的日均值，再通过线性天数放大。支持可选的基线限幅逻辑。</p>
-                </div>
-              ) : (
-                <p><b>线性回归优化：</b> 采用岭回归对特征进行收缩处理，采集天数作为普通线性变量。适合样本较少且特征呈线性分布的场景。</p>
-              )}
+              <div className="space-y-2 text-slate-700">
+                <p><b>XGBoost 推理引擎：</b></p>
+                {isDailyMode ? (
+                  <p className="bg-white/50 p-2 rounded border border-brand-200">
+                    <span className="text-brand-700 font-bold">回溯模式（强度学习）：</span><br/>
+                    系统自动将数据对齐至“日均”量级，预测时基于学习到的日均系数乘以【采集天数】进行线性放大。
+                    <span className="text-blue-700 font-semibold italic block mt-1">支持：通过中位数比值法建立基线限幅，防止离群值干扰。</span>
+                  </p>
+                ) : (
+                  <p className="bg-white/50 p-2 rounded border border-brand-200">
+                    <span className="text-brand-700 font-bold">在线模式（总量推理）：</span><br/>
+                    直接建立指标总量与产出总量的映射。不涉及天数除法，更贴合单天的业务场景。
+                    <span className="text-slate-500 italic block mt-1">注：此模式下不启用基线限幅。</span>
+                  </p>
+                )}
+              </div>
             </div>
           </div>
 
           <div className="lg:col-span-2 space-y-6">
             <Card title="数据学习">
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">上传包含“采集天数、点赞数、笔记数”等的 Excel 文件。系统会自动同步至本地数据库。</p>
+                <p className="text-sm text-gray-600">上传 Excel 训练数据。系统将根据{isDailyMode ? '日均强度' : '总量级'}提取业务产出系数并拟合 XGBoost。</p>
                 <div className="flex flex-wrap gap-3">
                   <input type="file" ref={trainInputRef} onChange={onTrainFileChange} accept=".xlsx,.xls" className="hidden" />
                   <Button onClick={() => trainInputRef.current?.click()} icon={<Upload size={18} />}>上传并训练</Button>
@@ -269,19 +280,19 @@ const App: React.FC = () => {
             <Card title="流量预测">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-600">选择待预测文件，系统将根据选定策略输出量级区间。</p>
-                  {currentModel === ModelType.ONLINE && (
+                  <p className="text-sm text-gray-600">基于已学习的产出路径进行推理。{isDailyMode ? '采集天数将作为线性放大系数。' : '直接基于总量进行映射。'}</p>
+                  {isDailyMode && (
                     <button 
                       onClick={() => setShowAdvance(!showAdvance)}
                       className="text-xs flex items-center gap-1 text-brand-600 hover:text-brand-700 font-medium"
                     >
                       {showAdvance ? <ChevronUp size={14}/> : <ChevronDown size={14}/>}
-                      高级配置 {guardrailEnabled && <ShieldCheck size={12} className="inline"/>}
+                      策略配置 {guardrailEnabled && <ShieldCheck size={12} className="inline"/>}
                     </button>
                   )}
                 </div>
 
-                {currentModel === ModelType.ONLINE && showAdvance && (
+                {isDailyMode && showAdvance && (
                   <div className="p-4 bg-slate-50 border rounded-lg space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
                     <div className="flex items-center gap-2">
                       <input 
@@ -292,7 +303,7 @@ const App: React.FC = () => {
                         className="w-4 h-4 text-brand-600 rounded focus:ring-brand-500"
                       />
                       <label htmlFor="guardrail_toggle" className="text-sm font-semibold text-gray-700 flex items-center gap-1">
-                        启用基线估计限幅 <span className="text-xs font-normal text-gray-400">(防止模型预测异常爆表或过低)</span>
+                        启用稳健基线限幅 <span className="text-xs font-normal text-gray-400">(强制预测值回归业务基线)</span>
                       </label>
                     </div>
                     
@@ -329,7 +340,7 @@ const App: React.FC = () => {
 
                 <div className="flex gap-3">
                   <input type="file" ref={predictInputRef} onChange={onPredictFileChange} accept=".xlsx,.xls" className="hidden" />
-                  <Button variant="primary" className="bg-brand-600 hover:bg-brand-700" onClick={() => predictInputRef.current?.click()} icon={<Activity size={18} />}>执行预测</Button>
+                  <Button variant="primary" className="bg-brand-600 hover:bg-brand-700" onClick={() => predictInputRef.current?.click()} icon={<Activity size={18} />}>执行推理预测</Button>
                   <Button variant="outline" onClick={generatePredictionTemplate} icon={<FileSpreadsheet size={16}/>}>下载模板</Button>
                 </div>
               </div>
@@ -368,7 +379,6 @@ const App: React.FC = () => {
                             <td className={`px-3 py-2 font-bold ${row._IS_CLIPPED ? 'text-amber-600 bg-amber-50' : 'text-brand-600 bg-brand-50/30'}`}>
                               <div className="flex items-center gap-1">
                                 {row['预测采集量']}
-                                { /* Wrap ShieldCheck icon in a span to provide 'title' attribute since Lucide components don't support it directly in their prop types */ }
                                 {row._IS_CLIPPED && (
                                   <span title="已触发基线限幅修正">
                                     <ShieldCheck size={12} className="text-amber-500" />
