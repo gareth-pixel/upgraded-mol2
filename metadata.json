@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Collection Volume Predictor",
+  "description": "A web-based system for predicting collection volumes using Random Forest models. Supports online, recall, and mix models with cumulative training and 80% confidence interval predictions.",
+  "requestFramePermissions": []
+}
