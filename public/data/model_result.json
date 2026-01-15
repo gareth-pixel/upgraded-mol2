@@ -8245,5 +8245,2179 @@
         "采集量": 53
       }
     ]
+  },
+  "rf_model_recall": {
+    "model": {
+      "type": "rf_model_recall",
+      "initialMean": 368.53292806484296,
+      "learningRate": 0.1,
+      "trees": [
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 542.4166666666667,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -180.98709473150964
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -306.72181695373183
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.883333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 79.3004052684904
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -258.23292806484295
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 9.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 816.9004052684904
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 109.369452887538
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 1633.3765957446808
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 542.4166666666667,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -162.88838525835865
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -276.0496352583586
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.883333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 71.37036474164135
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -232.40963525835866
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 9.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 735.2103647416413
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 98.4325075987842
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 1470.0389361702128
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 542.4166666666667,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -146.59954673252284
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -248.44467173252292
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 3.6333333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 106.62221715636612
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -179.92160506585614
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 895.4893282674773
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 156.4492711246201
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 1323.0350425531915
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 542.4166666666667,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 14.350000000000001,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -293.48244817038164
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -178.48786630695577
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.883333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 60.73470210739616
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -191.1765112259372
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 9.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 609.0923982978724
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 72.94432972644377
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 1190.7315382978722
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 80.15,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 24.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -261.52742832394534
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -212.2465326607178
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.8166666666666664,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -25.10808273683112
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -171.7370223647174
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 745.0311556109423
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 122.78694966808511
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 1071.6583844680854
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 542.4166666666667,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -96.06274425144801
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -188.14337432234296
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 3.15,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 148.12511128145076
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -109.62948423724212
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 18.297619047619047,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 417.1733313031814
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -9.48356011777103
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 964.4925460212767
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -86.45646982630319
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -197.91777407801868
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.683333333333334,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 33.488821306198396
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -119.99569829194337
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 628.8107069195299
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 94.3903350562156
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 868.043291419149
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 80.15,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.1833333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -228.4769607798405
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -164.91530047758923
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.8166666666666664,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -8.223654008119418
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -124.56349588480799
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 9.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 426.91486797502836
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 34.214102007622586
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 781.2389622772341
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -66.77031285805305
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -165.87578482033248
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.683333333333334,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 35.615898251458056
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -95.53977887426822
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 523.238149430074
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1770.2857142857142,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 45.25541737196092
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 259.5673407379951
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 826.8944311288757
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 14.350000000000001,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -188.50360175121062
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.8452380952380953,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.212150480433717
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -108.63030999406121
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 470.91433448706664
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1770.2857142857142,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 40.729875634764824
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 233.61060666419564
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 744.2049880159881
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -51.88613710155024
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -139.77134903582785
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.683333333333334,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 37.49224985490073
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -75.12276998743529
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 9.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 330.2164923313322
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 66.10331213128026
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 669.7844892143893
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2103.6666666666665,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 14.350000000000001,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -160.94921938856342
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.8452380952380953,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -10.507274331670665
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -94.14034877496874
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 3.3833333333333333,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 297.19484309819893
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 8.168672742790807
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 521.0667414342299
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2339.6499999999996,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 80.15,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.1833333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -158.81833759191872
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -106.95636155725443
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 59.07771046419931
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -64.4690515463782
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 361.0817674954069
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1770.2857142857142,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 15.401205819994743
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 177.1774440757971
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 550.6993661495275
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2103.6666666666665,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -35.666466362642
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -109.85646081005449
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 231.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -35.287369558031884
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 145.54411624871017
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 3.3833333333333333,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 248.65121012260903
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1770.2857142857142,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -23.006786671437638
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 159.4596996682174
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 495.62942953457485
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 542.4166666666667,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 10.816666666666666,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -136.9560351315742
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 32.262202755673094
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -78.9303075506837
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 3.3833333333333333,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 175.53368401226214
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 18253.714285714286,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -52.013171180260315
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 75.40599753552169
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 382.0694790208991
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2103.6666666666665,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 80.15,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.1833333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -125.67425368330521
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -80.47175697801798
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 53.51036577847624
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -50.29352386876985
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 282.5551013323791
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1770.2857142857142,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 11.029851933843043
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 120.63995587357454
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 407.8595386790275
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 542.4166666666667,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 10.816666666666666,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -112.57752449544964
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.1666666666666665,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 78.93432920062858
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -57.874569053672175
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 3.3833333333333333,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 153.1553679728189
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12783.571428571428,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -44.08212826795528
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 87.45710921133139
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 367.0735848111248
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2103.6666666666665,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -21.51859761667164
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -78.40350902461043
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.683333333333334,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 40.38576853990719
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -31.320290493714214
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.716666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 238.9840544018591
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1770.2857142857142,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 7.759544892853057
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 99.830249365084
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 330.36622633001224
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 2103.6666666666665,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 10.816666666666666,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -97.74578949903903
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.1666666666666665,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 73.19275604223284
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -35.902973833866845
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 3.3833333333333333,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 163.90075628379333
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12783.571428571428,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -37.831884413072
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 71.79739683609755
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 297.3296036970111
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 266.6,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 1.55,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 141.25,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -79.76316810668226
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 47.39371184452962
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.6,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -126.4802117561915
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -62.28060126848085
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 146.99029712778616
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 5.783333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 34.44918032749528
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -24.123182412373737
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 229.17224182286895
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 542.4166666666667,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 10.816666666666666,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -80.43195790942193
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 25.861783697164334
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -44.98777825468245
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 3.3833333333333333,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 114.18008977091351
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12783.571428571428,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -34.293065253857336
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 58.586794585883716
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 244.67941914502322
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 2886.25,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 266.6,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 1.55,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 141.25,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -66.4009990452365
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 40.068162290360206
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 1.6,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -109.33341275510409
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -51.30059060434494
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 2.216666666666667,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 120.87325843791618
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 174.66666666666669,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.774147465807815
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 29.62596272399128
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 220.21147723052096
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -11.849776539694332
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -49.652500872956
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.216666666666667,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 108.78593259412455
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1.444361668486302
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 489.8847739519133
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -385.19855938141995
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 2103.6666666666665,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 10.816666666666666,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -63.9961266626774
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -17.380047748284635
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 3.3833333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 113.98422203433267
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 8.177283476164575
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 440.89629655672206
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -346.678703443278
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -7.178691151606687
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -42.63847215140265
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 4.683333333333334,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 49.150898596996726
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -9.189441385588022
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 396.80666690104977
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -312.0108330989501
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 2103.6666666666665,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 10.816666666666666,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -55.992150356254086
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -14.020375961081243
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 3.3833333333333333,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 97.6707099711997
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 7.30616026739717
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 357.12600021094477
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -280.8097497890551
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 1.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -3.4848429005189026
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -36.69277551085311
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.216666666666667,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 83.97952406020408
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1.0638580093152332
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 321.4134001898501
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -252.72877481014962
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 2103.6666666666665,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 7.766666666666667,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -9.476770963160396
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -40.33996506578668
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 18.297619047619047,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 60.107256869722434
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -8.577784274831743
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 289.2720601708652
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -227.4558973291346
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 28.602380952380955,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 125.28333333333333,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 109.31666666666666,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 80.15,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -34.50429650069647
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 3.3209045017115244
+                }
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -81.41397715881985
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 5.783333333333333,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 64.55,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -10.365379559166568
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 46.376478485106546
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 18253.714285714286,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -27.512124299941807
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 30.11131375088661
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": 99.52937358287829
+          }
+        },
+        {
+          "featureIndex": 0,
+          "threshold": 93.63333333333333,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 2886.25,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 266.6,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 83.4,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -10.886767223579183
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -42.85862426007835
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 2.216666666666667,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 68.41239951034495
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1.0148105633765336
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 250.39191679549094
+            }
+          },
+          "right": {
+            "featureIndex": -1,
+            "threshold": 0,
+            "leftValue": -214.66324495450885
+          }
+        }
+      ],
+      "residualStd": 91.92479761958263,
+      "featureNames": [
+        "日均笔记数",
+        "日均点赞数",
+        "日均收藏数",
+        "日均评论数"
+      ],
+      "baselineCoeffs": [
+        19.098039215686278,
+        0.13748316876122083
+      ],
+      "metrics": {
+        "r2": 0.9756407055817315,
+        "mae": 1365.3443958586192,
+        "sampleSize": 47,
+        "lastUpdated": "2026/1/15 20:24:05"
+      }
+    },
+    "data": [
+      {
+        "采集天数": 30,
+        "笔记数": 859,
+        "点赞数": 918938,
+        "收藏数": 559302,
+        "评论数": 89180,
+        "采集量": 80673
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 455,
+        "点赞数": 2587982,
+        "收藏数": 477759,
+        "评论数": 83995,
+        "采集量": 19994
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 3523,
+        "点赞数": 3067282,
+        "收藏数": 1709579,
+        "评论数": 209223,
+        "采集量": 46269
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 2095,
+        "点赞数": 2262038,
+        "收藏数": 826377,
+        "评论数": 390570,
+        "采集量": 64370
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 1712
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 22
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 2208
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 2720
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 717
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 390
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 1601
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 30
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 1348
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 412
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 98,
+        "点赞数": 85388,
+        "收藏数": 32317,
+        "评论数": 5599,
+        "采集量": 28549
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 31,
+        "点赞数": 4068,
+        "收藏数": 1410,
+        "评论数": 320,
+        "采集量": 319
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 22,
+        "点赞数": 11840,
+        "收藏数": 4192,
+        "评论数": 532,
+        "采集量": 9818
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 15,
+        "点赞数": 2222,
+        "收藏数": 1056,
+        "评论数": 290,
+        "采集量": 1221
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 65,
+        "点赞数": 70747,
+        "收藏数": 36142,
+        "评论数": 12200,
+        "采集量": 42577
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 57,
+        "点赞数": 40008,
+        "收藏数": 19558,
+        "评论数": 3377,
+        "采集量": 15996
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 84,
+        "点赞数": 31836,
+        "收藏数": 16821,
+        "评论数": 8917,
+        "采集量": 16761
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 105,
+        "点赞数": 69632,
+        "收藏数": 34228,
+        "评论数": 5504,
+        "采集量": 11363
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 43,
+        "点赞数": 22234,
+        "收藏数": 7589,
+        "评论数": 10438,
+        "采集量": 7037
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 46,
+        "点赞数": 4407,
+        "收藏数": 5205,
+        "评论数": 2151,
+        "采集量": 10580
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 803
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 2080
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 544
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 9620
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 4022
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 13
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 259
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 180
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 4901
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 1688
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 974
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 11492
+      },
+      {
+        "采集天数": 30,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 4531
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 116,
+        "点赞数": 3010,
+        "收藏数": 1326,
+        "评论数": 2373,
+        "采集量": 274
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 200,
+        "点赞数": 69973,
+        "收藏数": 32632,
+        "评论数": 6797,
+        "采集量": 2521
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 118,
+        "点赞数": 7647,
+        "收藏数": 1435,
+        "评论数": 1408,
+        "采集量": 275
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 200,
+        "点赞数": 17095,
+        "收藏数": 10984,
+        "评论数": 5929,
+        "采集量": 2656
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 20,
+        "点赞数": 2027,
+        "收藏数": 530,
+        "评论数": 371,
+        "采集量": 109
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 317,
+        "点赞数": 108997,
+        "收藏数": 48370,
+        "评论数": 13690,
+        "采集量": 11414
+      },
+      {
+        "采集天数": 7,
+        "笔记数": 150,
+        "点赞数": 185579,
+        "收藏数": 133526,
+        "评论数": 11094,
+        "采集量": 3539
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 1086
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 2124
+      },
+      {
+        "采集天数": 15,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 2583
+      }
+    ]
   }
 }
