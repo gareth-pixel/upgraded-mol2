@@ -1,7 +1,7 @@
 
 import { DataRow, RIDGE_FEATURES, TARGET, Tree, RidgeModel, GBDTModel } from '../types';
 
-// --- Linear Algebra Helpers for Ridge ---
+// --- Math Helpers ---
 
 const transpose = (m: number[][]) => m[0].map((_, i) => m.map(row => row[i]));
 
@@ -25,7 +25,6 @@ const invert = (m: number[][]) => {
   for (let i = 0; i < n; i++) {
     let pivot = copy[i][i];
     if (Math.abs(pivot) < 1e-10) pivot = 1e-10; 
-    
     for (let j = 0; j < n; j++) {
       copy[i][j] /= pivot;
       identity[i][j] /= pivot;
@@ -43,6 +42,26 @@ const invert = (m: number[][]) => {
   return identity;
 };
 
+const median = (arr: number[]) => {
+  if (arr.length === 0) return 0;
+  const s = [...arr].sort((a, b) => a - b);
+  const mid = Math.floor(s.length / 2);
+  return s.length % 2 !== 0 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+};
+
+/**
+ * Calculates robust coefficients for the baseline using median of ratios.
+ */
+const calculateRobustBaselineCoeffs = (X: number[][], y: number[]) => {
+  const ratioNotes = y.map((val, i) => val / Math.max(X[i][0], 1));
+  const ratioLikes = y.map((val, i) => val / Math.max(X[i][1], 1));
+  
+  return [
+    Math.max(0, median(ratioNotes)),
+    Math.max(0, median(ratioLikes))
+  ];
+};
+
 // --- Evaluation Metrics ---
 
 export const calculateMAE = (yTrue: number[], yPred: number[]): number => {
@@ -58,7 +77,7 @@ export const calculateR2 = (yTrue: number[], yPred: number[]): number => {
   return ssTot === 0 ? 0 : 1 - (ssRes / ssTot);
 };
 
-// --- Ridge Regression Logic ---
+// --- Ridge Logic ---
 
 const getScaler = (X: number[][]) => {
   const n = X.length;
@@ -66,7 +85,6 @@ const getScaler = (X: number[][]) => {
   const p = X[0].length;
   const means = Array(p).fill(0);
   const stds = Array(p).fill(0);
-
   for (let j = 0; j < p; j++) {
     const col = X.map(row => row[j]);
     means[j] = col.reduce((a, b) => a + b, 0) / n;
@@ -93,44 +111,35 @@ export const trainRidge = async (data: DataRow[], alpha = 1.0) => {
   for (let i = 1; i < XTX.length; i++) XTX[i][i] += alpha;
   const XTX_inv = invert(XTX);
   const XTy = multiply(XT, y);
-  const weights_matrix = multiply(XTX_inv, XTy);
-  const weights_all = weights_matrix.map(row => row[0]);
+  const weights_all = multiply(XTX_inv, XTy).map(row => row[0]);
+  
   const yTrue = y.map(row => row[0]);
-  const yPred = X.map(row => {
-    let sum = weights_all[0];
-    for (let i = 1; i < weights_all.length; i++) sum += weights_all[i] * row[i];
-    return sum;
-  });
+  const yPred = X.map(row => weights_all.reduce((sum, w, i) => sum + w * row[i], 0));
   const residualVariance = yTrue.reduce((sum, val, i) => sum + Math.pow(val - yPred[i], 2), 0) / Math.max(1, (n - p - 1));
   const residualStd = Math.sqrt(Math.max(0, residualVariance));
+  
   return { weights: weights_all.slice(1), intercept: weights_all[0], scaler, residualStd };
 };
 
 export const predictRidge = (model: Omit<RidgeModel, 'type' | 'metrics'>, row: DataRow) => {
   const x_raw = RIDGE_FEATURES.map(f => Number(row[f]) || 0);
   const x_scaled = x_raw.map((val, i) => (val - model.scaler.means[i]) / model.scaler.stds[i]);
-  let mean = model.intercept;
-  for (let i = 0; i < x_scaled.length; i++) mean += x_scaled[i] * model.weights[i];
+  const mean = model.intercept + x_scaled.reduce((sum, val, i) => sum + val * model.weights[i], 0);
   const margin = 1.28 * model.residualStd;
   return { mean, lowerBound: Math.max(0, mean - margin), upperBound: mean + margin };
 };
 
-// --- GBDT (XGBoost-like) Logic ---
+// --- GBDT Logic ---
 
 const trainRegressionTree = (X: number[][], y: number[], depth: number, maxDepth: number, featureCount: number): Tree => {
   const n = X.length;
   if (depth >= maxDepth || n <= 5) {
-    return { featureIndex: -1, threshold: 0, leftValue: y.reduce((a, b) => a + b, 0) / n };
+    return { featureIndex: -1, threshold: 0, leftValue: y.reduce((a, b) => a + b, 0) / Math.max(1, n) };
   }
-
-  let bestFeature = -1;
-  let bestThreshold = 0;
-  let minMSE = Infinity;
-
+  let bestFeature = -1, bestThreshold = 0, minMSE = Infinity;
   for (let f = 0; f < featureCount; f++) {
     const values = X.map(row => row[f]).sort((a, b) => a - b);
     const uniqueValues = Array.from(new Set(values));
-    
     for (let i = 0; i < uniqueValues.length - 1; i++) {
       const threshold = (uniqueValues[i] + uniqueValues[i+1]) / 2;
       const leftY = [], rightY = [];
@@ -139,34 +148,20 @@ const trainRegressionTree = (X: number[][], y: number[], depth: number, maxDepth
         else rightY.push(y[j]);
       }
       if (leftY.length === 0 || rightY.length === 0) continue;
-      
       const leftMean = leftY.reduce((a, b) => a + b, 0) / leftY.length;
       const rightMean = rightY.reduce((a, b) => a + b, 0) / rightY.length;
-      const mse = leftY.reduce((s, v) => s + Math.pow(v - leftMean, 2), 0) + 
-                  rightY.reduce((s, v) => s + Math.pow(v - rightMean, 2), 0);
-      
-      if (mse < minMSE) {
-        minMSE = mse;
-        bestFeature = f;
-        bestThreshold = threshold;
-      }
+      const mse = leftY.reduce((s, v) => s + Math.pow(v - leftMean, 2), 0) + rightY.reduce((s, v) => s + Math.pow(v - rightMean, 2), 0);
+      if (mse < minMSE) { minMSE = mse; bestFeature = f; bestThreshold = threshold; }
     }
   }
-
-  if (bestFeature === -1) return { featureIndex: -1, threshold: 0, leftValue: y.reduce((a, b) => a + b, 0) / n };
-
+  if (bestFeature === -1) return { featureIndex: -1, threshold: 0, leftValue: y.reduce((a, b) => a + b, 0) / Math.max(1, n) };
   const leftX = [], leftY = [], rightX = [], rightY = [];
   for (let i = 0; i < n; i++) {
-    if (X[i][bestFeature] <= bestThreshold) {
-      leftX.push(X[i]); leftY.push(y[i]);
-    } else {
-      rightX.push(X[i]); rightY.push(y[i]);
-    }
+    if (X[i][bestFeature] <= bestThreshold) { leftX.push(X[i]); leftY.push(y[i]); }
+    else { rightX.push(X[i]); rightY.push(y[i]); }
   }
-
   return {
-    featureIndex: bestFeature,
-    threshold: bestThreshold,
+    featureIndex: bestFeature, threshold: bestThreshold,
     left: trainRegressionTree(leftX, leftY, depth + 1, maxDepth, featureCount),
     right: trainRegressionTree(rightX, rightY, depth + 1, maxDepth, featureCount)
   };
@@ -174,38 +169,75 @@ const trainRegressionTree = (X: number[][], y: number[], depth: number, maxDepth
 
 const predictTree = (tree: Tree, x: number[]): number => {
   if (tree.featureIndex === -1) return tree.leftValue!;
-  if (x[tree.featureIndex] <= tree.threshold) return predictTree(tree.left!, x);
-  return predictTree(tree.right!, x);
+  return x[tree.featureIndex] <= tree.threshold ? predictTree(tree.left!, x) : predictTree(tree.right!, x);
 };
 
 export const trainGBDT = async (data: DataRow[], featureNames: string[], targetName: string, nEstimators = 30, lr = 0.1, maxDepth = 4) => {
   const X = data.map(row => featureNames.map(f => Number(row[f]) || 0));
   const y = data.map(row => Number(row[targetName]) || 0);
+  
+  const baselineCoeffs = calculateRobustBaselineCoeffs(X, y);
+
   const initialMean = y.reduce((a, b) => a + b, 0) / y.length;
   let currentPreds = Array(y.length).fill(initialMean);
   const trees: Tree[] = [];
-
   for (let i = 0; i < nEstimators; i++) {
     const residuals = y.map((val, idx) => val - currentPreds[idx]);
     const tree = trainRegressionTree(X, residuals, 0, maxDepth, featureNames.length);
     trees.push(tree);
-    for (let j = 0; j < y.length; j++) {
-      currentPreds[j] += lr * predictTree(tree, X[j]);
-    }
+    for (let j = 0; j < y.length; j++) currentPreds[j] += lr * predictTree(tree, X[j]);
   }
-
   const residualVariance = y.reduce((sum, val, i) => sum + Math.pow(val - currentPreds[i], 2), 0) / Math.max(1, (y.length - 1));
   const residualStd = Math.sqrt(Math.max(0, residualVariance));
 
-  return { initialMean, learningRate: lr, trees, residualStd, featureNames };
+  return { initialMean, learningRate: lr, trees, residualStd, featureNames, baselineCoeffs };
 };
 
-export const predictGBDT = (model: Omit<GBDTModel, 'type' | 'metrics'>, row: DataRow) => {
+export interface GuardrailOptions {
+  enabled: boolean;
+  lowPercent: number; // e.g. 30
+  highPercent: number; // e.g. 170
+}
+
+export const predictGBDT = (
+  model: Omit<GBDTModel, 'type' | 'metrics'>, 
+  row: DataRow,
+  guardrail: GuardrailOptions = { enabled: true, lowPercent: 30, highPercent: 170 }
+) => {
   const x = model.featureNames.map(f => Number(row[f]) || 0);
-  let mean = model.initialMean;
+  
+  // 1. GBDT Raw Prediction
+  let gbdtDaily = model.initialMean;
   for (const tree of model.trees) {
-    mean += model.learningRate * predictTree(tree, x);
+    gbdtDaily += model.learningRate * predictTree(tree, x);
   }
+
+  let finalDaily = gbdtDaily;
+  let isClipped = false;
+
+  // 2. Conditional Guardrail Clipping
+  if (guardrail.enabled) {
+    const kNotes = model.baselineCoeffs[0];
+    const kLikes = model.baselineCoeffs[1];
+    const baselineDaily = (kNotes * x[0] + kLikes * x[1]) / 2;
+    
+    const minDaily = baselineDaily * (guardrail.lowPercent / 100);
+    const maxDaily = baselineDaily * (guardrail.highPercent / 100);
+    
+    if (gbdtDaily < minDaily) {
+      finalDaily = minDaily;
+      isClipped = true;
+    } else if (gbdtDaily > maxDaily) {
+      finalDaily = maxDaily;
+      isClipped = true;
+    }
+  }
+
   const margin = 1.28 * model.residualStd;
-  return { mean, lowerBound: Math.max(0, mean - margin), upperBound: mean + margin };
+  return { 
+    mean: finalDaily, 
+    lowerBound: Math.max(0, finalDaily - margin), 
+    upperBound: finalDaily + margin,
+    isClipped
+  };
 };

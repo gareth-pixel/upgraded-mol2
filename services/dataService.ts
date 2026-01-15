@@ -2,7 +2,7 @@
 import * as XLSX from 'xlsx';
 import { DataRow, ModelType, TrainingMetrics, RidgeModel, GBDTModel, ModelData, INPUT_FEATURES, RIDGE_FEATURES, GBDT_FEATURES, TARGET } from '../types';
 import { STORAGE_KEYS, MODEL_CONFIGS } from '../constants';
-import { trainRidge, predictRidge, trainGBDT, predictGBDT, calculateR2, calculateMAE } from './mlEngine';
+import { trainRidge, predictRidge, trainGBDT, predictGBDT, calculateR2, calculateMAE, GuardrailOptions } from './mlEngine';
 import { dbService } from './db';
 
 export const preprocessRow = (row: DataRow): DataRow => {
@@ -78,9 +78,15 @@ export const downloadSummary = async (modelType: ModelType) => {
     content["权重分配"] = RIDGE_FEATURES.reduce((acc, f, i) => ({ ...acc, [f]: ridge.weights[i].toFixed(4) }), {});
     content["截距"] = ridge.intercept.toFixed(4);
   } else {
-    content["算法特征"] = (model as GBDTModel).featureNames;
-    content["树数量"] = (model as GBDTModel).trees.length;
-    content["学习率"] = (model as GBDTModel).learningRate;
+    const gbdt = model as GBDTModel;
+    content["算法特征 (不含天数)"] = gbdt.featureNames;
+    content["稳健基线系数"] = {
+      "笔记效率 (k_notes)": gbdt.baselineCoeffs[0].toFixed(6),
+      "点赞效率 (k_likes)": gbdt.baselineCoeffs[1].toFixed(6)
+    };
+    content["限幅说明"] = "支持在预测时动态配置 30%-170% 等限幅区间。";
+    content["树数量"] = gbdt.trees.length;
+    content["学习率"] = gbdt.learningRate;
   }
   
   const blob = new Blob([JSON.stringify(content, null, 2)], { type: "text/plain;charset=utf-8" });
@@ -100,7 +106,7 @@ export const trainFromData = async (
 ): Promise<TrainingMetrics> => {
   if (data.length === 0) throw new Error("训练数据为空");
 
-  onProgress?.("正在进行特征派生...");
+  onProgress?.("正在进行特征处理...");
   const processedData = data.map(preprocessRow);
 
   onProgress?.(`正在执行模型训练 (样本量: ${data.length})...`);
@@ -111,26 +117,24 @@ export const trainFromData = async (
   const yTrueTotal = processedData.map(r => Number(r[TARGET]));
 
   if (modelType === ModelType.ONLINE) {
-    // For ONLINE XGBoost:
-    // 1. Convert Target to Daily Volume: Total / Days
-    // 2. Train on GBDT_FEATURES (exclude '采集天数')
-    const trainingDataWithDailyTarget = processedData.map(r => ({
-      ...r,
-      'DAILY_TARGET': (Number(r[TARGET]) || 0) / Math.max(1, Number(r['采集天数']) || 1)
-    }));
+    const trainingDataWithDailyTarget = processedData.map(r => {
+      const days = Math.max(1, Number(r['采集天数']) || 1);
+      return {
+        ...r,
+        'DAILY_YIELD_TARGET': (Number(r[TARGET]) || 0) / days
+      };
+    });
 
-    const params = await trainGBDT(trainingDataWithDailyTarget, GBDT_FEATURES, 'DAILY_TARGET');
+    const params = await trainGBDT(trainingDataWithDailyTarget, GBDT_FEATURES, 'DAILY_YIELD_TARGET');
     
-    // Evaluate on original TOTAL volume to calculate R2/MAE correctly
     predictions = processedData.map(r => {
       const dailyPred = predictGBDT(params, r).mean;
       const days = Number(r['采集天数']) || 0;
-      return dailyPred * days; // Scale back up to total volume for metric calculation
+      return dailyPred * days; 
     });
 
     modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
   } else {
-    // For RIDGE: Regular training including '采集天数' in linear weights
     const params = await trainRidge(processedData);
     predictions = processedData.map(r => predictRidge(params, r).mean);
     modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
@@ -145,7 +149,7 @@ export const trainFromData = async (
 
   modelPayload.metrics = metrics;
 
-  onProgress?.("同步到本地数据库...");
+  onProgress?.("同步本地数据库...");
   await dbService.saveData(STORAGE_KEYS.DATA(modelType), data);
   await dbService.saveModel(STORAGE_KEYS.MODEL(modelType), modelPayload);
 
@@ -171,13 +175,14 @@ export const handleTrain = async (
 export const handlePredict = async (
   file: File,
   modelType: ModelType,
-  onProgress: (msg: string) => void
+  onProgress: (msg: string) => void,
+  guardrailOptions?: GuardrailOptions
 ): Promise<DataRow[]> => {
   onProgress("正在加载预测模型...");
   const model = await dbService.getModel(STORAGE_KEYS.MODEL(modelType)) as ModelData;
   if (!model) throw new Error("该模型尚未训练。");
 
-  onProgress("处理预测数据...");
+  onProgress("执行预测计算...");
   const data = await readFile(file);
   if (data.length === 0) throw new Error("文件为空");
   const error = validateColumns(data[0], false); 
@@ -185,17 +190,16 @@ export const handlePredict = async (
 
   const results = data.map(row => {
     const processedRow = preprocessRow(row);
-    let mean: number, lower: number, upper: number;
+    let mean: number, lower: number, upper: number, isClipped = false;
 
     if (modelType === ModelType.ONLINE) {
-      // Logic for Online XGBoost: Linear scale by days after nonlinear prediction
       const days = Number(row['采集天数']) || 0;
-      const preds = predictGBDT(model as GBDTModel, processedRow);
+      const preds = predictGBDT(model as GBDTModel, processedRow, guardrailOptions);
       mean = preds.mean * days;
       lower = preds.lowerBound * days;
       upper = preds.upperBound * days;
+      isClipped = preds.isClipped;
     } else {
-      // Logic for Ridge: Linear weights already include '采集天数' as a feature
       const preds = predictRidge(model as RidgeModel, processedRow);
       mean = preds.mean;
       lower = preds.lowerBound;
@@ -206,7 +210,8 @@ export const handlePredict = async (
       ...row,
       '预测采集量': Math.round(mean),
       '预测下限': Math.round(lower),
-      '预测上限': Math.round(upper)
+      '预测上限': Math.round(upper),
+      '_IS_CLIPPED': isClipped
     };
   });
 
@@ -214,7 +219,7 @@ export const handlePredict = async (
 };
 
 export const exportPredictionResults = (results: DataRow[], originalFileName: string, modelType: ModelType) => {
-  const ws = XLSX.utils.json_to_sheet(results);
+  const ws = XLSX.utils.json_to_sheet(results.map(({ _IS_CLIPPED, ...rest }) => rest));
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Predictions");
   const modelSuffix = modelType.split('_')[0];

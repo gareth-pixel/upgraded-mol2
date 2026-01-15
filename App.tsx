@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Download, Upload, BarChart2, FileSpreadsheet, Activity, AlertCircle, CheckCircle, X, Save, Trash2, Database, Github, Settings, CloudUpload, CloudDownload } from 'lucide-react';
+import { Download, Upload, BarChart2, FileSpreadsheet, Activity, AlertCircle, CheckCircle, X, Save, Trash2, Database, Github, Settings, CloudUpload, CloudDownload, ChevronDown, ChevronUp, ShieldCheck } from 'lucide-react';
 import { ModelType, TrainingMetrics, DataRow, INPUT_FEATURES } from './types';
 import { MODEL_CONFIGS } from './constants';
 import { getStoredMetrics, generateTrainTemplate, generatePredictionTemplate, downloadSummary, handleTrain, handlePredict, exportPredictionResults, clearModelData, downloadTrainingData, getModelExportData, restoreModelFromRemote } from './services/dataService';
@@ -17,6 +17,12 @@ const App: React.FC = () => {
   const [predictFileName, setPredictFileName] = useState<string>("");
   const [showSettings, setShowSettings] = useState(false);
   const [ghConfig, setGhConfig] = useState<GitHubConfig>({ token: '', owner: '', repo: '', path: 'public/data/model_result.json' });
+
+  // Guardrail state
+  const [showAdvance, setShowAdvance] = useState(false);
+  const [guardrailEnabled, setGuardrailEnabled] = useState(true);
+  const [lowPercent, setLowPercent] = useState(30);
+  const [highPercent, setHighPercent] = useState(170);
 
   const trainInputRef = useRef<HTMLInputElement>(null);
   const predictInputRef = useRef<HTMLInputElement>(null);
@@ -50,7 +56,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '初始化训练...' });
       const newMetrics = await handleTrain(e.target.files[0], currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setMetrics(newMetrics);
-      setStatus({ type: 'success', msg: `模型训练完成！${currentModel === ModelType.ONLINE ? '已应用天数线性放大逻辑。' : ''}` });
+      setStatus({ type: 'success', msg: `模型训练完成！${currentModel === ModelType.ONLINE ? '已应用：天数线性放大 + 基线系数提取。' : ''}` });
       setPreviewData(null); 
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '训练失败' });
@@ -94,9 +100,18 @@ const App: React.FC = () => {
     setPredictFileName(file.name);
     try {
       setStatus({ type: 'loading', msg: '正在预测...' });
-      const results = await handlePredict(file, currentModel, (msg) => setStatus({ type: 'loading', msg }));
+      const results = await handlePredict(
+        file, 
+        currentModel, 
+        (msg) => setStatus({ type: 'loading', msg }),
+        currentModel === ModelType.ONLINE ? {
+          enabled: guardrailEnabled,
+          lowPercent,
+          highPercent
+        } : undefined
+      );
       setPreviewData(results);
-      setStatus({ type: 'success', msg: '预测完成！' });
+      setStatus({ type: 'success', msg: `预测完成！${guardrailEnabled ? '已应用基线限幅。' : '当前使用原始模型输出。'}` });
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '预测失败' });
     } finally {
@@ -156,8 +171,8 @@ const App: React.FC = () => {
               <Activity className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.0</h1>
-              <p className="text-xs text-gray-500">Multi-Model Volume Forecaster</p>
+              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.1</h1>
+              <p className="text-xs text-gray-500">Enhanced Linear Scaling Predictor</p>
             </div>
           </div>
           <button onClick={() => setShowSettings(!showSettings)} className="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100"><Settings size={20} /></button>
@@ -169,10 +184,10 @@ const App: React.FC = () => {
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 space-y-4">
             <h3 className="text-lg font-semibold flex items-center gap-2 border-b pb-2"><Github size={20} /> GitHub 同步配置</h3>
             <div className="space-y-3">
-               <input placeholder="Repo Owner" className="w-full p-2 border rounded" value={ghConfig.owner} onChange={e => setGhConfig({...ghConfig, owner: e.target.value})} />
-               <input placeholder="Repo Name" className="w-full p-2 border rounded" value={ghConfig.repo} onChange={e => setGhConfig({...ghConfig, repo: e.target.value})} />
-               <input placeholder="File Path" className="w-full p-2 border rounded" value={ghConfig.path} onChange={e => setGhConfig({...ghConfig, path: e.target.value})} />
-               <input placeholder="Token" type="password" className="w-full p-2 border rounded" value={ghConfig.token} onChange={e => setGhConfig({...ghConfig, token: e.target.value})} />
+               <input placeholder="Repo Owner" className="w-full p-2 border rounded text-sm" value={ghConfig.owner} onChange={e => setGhConfig({...ghConfig, owner: e.target.value})} />
+               <input placeholder="Repo Name" className="w-full p-2 border rounded text-sm" value={ghConfig.repo} onChange={e => setGhConfig({...ghConfig, repo: e.target.value})} />
+               <input placeholder="File Path" className="w-full p-2 border rounded text-sm" value={ghConfig.path} onChange={e => setGhConfig({...ghConfig, path: e.target.value})} />
+               <input placeholder="Token" type="password" className="w-full p-2 border rounded text-sm" value={ghConfig.token} onChange={e => setGhConfig({...ghConfig, token: e.target.value})} />
             </div>
             <div className="flex justify-end gap-2">
               <Button variant="outline" size="sm" onClick={() => setShowSettings(false)}>取消</Button>
@@ -222,11 +237,11 @@ const App: React.FC = () => {
               <h4 className="font-bold flex items-center gap-2 mb-1"><AlertCircle size={14}/> 算法逻辑说明</h4>
               {currentModel === ModelType.ONLINE ? (
                 <div className="space-y-2">
-                  <p>当前使用 <b>梯度提升回归树 (XGBoost)</b>。</p>
-                  <p className="text-blue-700 font-semibold underline decoration-blue-300">专项优化：采集天数不参与内部权重，通过学习“日均采集量”并在最后按天数线性乘回，确保长期预测的线性逻辑。</p>
+                  <p><b>XGBoost + 物理常识校准：</b></p>
+                  <p>系统自动将训练数据转为“日均”量级。预测时，先计算指标强度对应的日均值，再通过线性天数放大。支持可选的基线限幅逻辑。</p>
                 </div>
               ) : (
-                <p>当前使用 <b>岭回归 (Ridge Regression)</b>。采集天数作为普通线性特征参与全局权重计算，适合处理小样本稳定性需求。</p>
+                <p><b>线性回归优化：</b> 采用岭回归对特征进行收缩处理，采集天数作为普通线性变量。适合样本较少且特征呈线性分布的场景。</p>
               )}
             </div>
           </div>
@@ -234,11 +249,11 @@ const App: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             <Card title="数据学习">
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">上传 Excel 训练数据。系统将自动完成日均特征派生与模型拟合。</p>
+                <p className="text-sm text-gray-600">上传包含“采集天数、点赞数、笔记数”等的 Excel 文件。系统会自动同步至本地数据库。</p>
                 <div className="flex flex-wrap gap-3">
                   <input type="file" ref={trainInputRef} onChange={onTrainFileChange} accept=".xlsx,.xls" className="hidden" />
                   <Button onClick={() => trainInputRef.current?.click()} icon={<Upload size={18} />}>上传并训练</Button>
-                  <Button onClick={handleCloudPretrain} variant="secondary" icon={<CloudDownload size={18} />}>从云端同步</Button>
+                  <Button onClick={handleCloudPretrain} variant="secondary" icon={<CloudDownload size={18} />}>云端同步</Button>
                   <Button variant="outline" onClick={generateTrainTemplate} icon={<FileSpreadsheet size={16}/>}>训练模板</Button>
                 </div>
                 <div className="pt-4 border-t flex justify-between gap-3">
@@ -246,30 +261,95 @@ const App: React.FC = () => {
                     <Button variant="secondary" size="sm" onClick={handleDownloadTrainData} icon={<Database size={14}/>}>导出数据库</Button>
                     <Button variant="primary" size="sm" onClick={handlePublishToGitHub} icon={<CloudUpload size={14}/>} className="bg-gray-800">发布至云端</Button>
                   </div>
-                  <Button variant="danger" size="sm" onClick={handleClearData} icon={<Trash2 size={14}/>} className="bg-red-50 text-red-600 border-red-200">重置模型</Button>
+                  <Button variant="danger" size="sm" onClick={handleClearData} icon={<Trash2 size={14}/>} className="bg-red-600 text-white border-red-200">重置模型</Button>
                 </div>
               </div>
             </Card>
 
             <Card title="流量预测">
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">基于已学习的权重/树路径进行推理，输出 80% 置信区间预测结果。</p>
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-gray-600">选择待预测文件，系统将根据选定策略输出量级区间。</p>
+                  {currentModel === ModelType.ONLINE && (
+                    <button 
+                      onClick={() => setShowAdvance(!showAdvance)}
+                      className="text-xs flex items-center gap-1 text-brand-600 hover:text-brand-700 font-medium"
+                    >
+                      {showAdvance ? <ChevronUp size={14}/> : <ChevronDown size={14}/>}
+                      高级配置 {guardrailEnabled && <ShieldCheck size={12} className="inline"/>}
+                    </button>
+                  )}
+                </div>
+
+                {currentModel === ModelType.ONLINE && showAdvance && (
+                  <div className="p-4 bg-slate-50 border rounded-lg space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="flex items-center gap-2">
+                      <input 
+                        type="checkbox" 
+                        id="guardrail_toggle" 
+                        checked={guardrailEnabled}
+                        onChange={(e) => setGuardrailEnabled(e.target.checked)}
+                        className="w-4 h-4 text-brand-600 rounded focus:ring-brand-500"
+                      />
+                      <label htmlFor="guardrail_toggle" className="text-sm font-semibold text-gray-700 flex items-center gap-1">
+                        启用基线估计限幅 <span className="text-xs font-normal text-gray-400">(防止模型预测异常爆表或过低)</span>
+                      </label>
+                    </div>
+                    
+                    {guardrailEnabled && (
+                      <div className="grid grid-cols-2 gap-4 pl-6">
+                        <div className="space-y-1">
+                          <label className="text-xs text-gray-500">限幅下限 (%)</label>
+                          <div className="relative">
+                            <input 
+                              type="number" 
+                              value={lowPercent} 
+                              onChange={(e) => setLowPercent(Number(e.target.value))}
+                              className="w-full p-2 border rounded text-sm pr-8"
+                            />
+                            <span className="absolute right-2 top-2 text-gray-400 text-xs">%</span>
+                          </div>
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-xs text-gray-500">限幅上限 (%)</label>
+                          <div className="relative">
+                            <input 
+                              type="number" 
+                              value={highPercent} 
+                              onChange={(e) => setHighPercent(Number(e.target.value))}
+                              className="w-full p-2 border rounded text-sm pr-8"
+                            />
+                            <span className="absolute right-2 top-2 text-gray-400 text-xs">%</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 <div className="flex gap-3">
                   <input type="file" ref={predictInputRef} onChange={onPredictFileChange} accept=".xlsx,.xls" className="hidden" />
-                  <Button variant="primary" className="bg-purple-600 hover:bg-purple-700" onClick={() => predictInputRef.current?.click()} icon={<Activity size={18} />}>开始预测</Button>
-                  <Button variant="outline" onClick={generatePredictionTemplate} icon={<FileSpreadsheet size={16}/>}>预测模板</Button>
+                  <Button variant="primary" className="bg-brand-600 hover:bg-brand-700" onClick={() => predictInputRef.current?.click()} icon={<Activity size={18} />}>执行预测</Button>
+                  <Button variant="outline" onClick={generatePredictionTemplate} icon={<FileSpreadsheet size={16}/>}>下载模板</Button>
                 </div>
               </div>
             </Card>
 
             {previewData && (
-              <Card title="预测预览" className="border-brand-200 ring-4 ring-brand-50">
+              <Card title="预测结果预览" className="border-brand-200 ring-4 ring-brand-50">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center text-sm">
-                    <p>预测样本: <span className="font-bold">{previewData.length}</span></p>
+                    <div className="flex gap-4">
+                       <p>样本总数: <span className="font-bold">{previewData.length}</span></p>
+                       {previewData.some(r => r._IS_CLIPPED) && (
+                         <p className="text-amber-600 flex items-center gap-1 text-xs">
+                           <ShieldCheck size={14}/> 发现受限幅修正的数据
+                         </p>
+                       )}
+                    </div>
                     <div className="flex gap-2">
                       <Button variant="outline" size="sm" onClick={() => setPreviewData(null)} icon={<X size={16} />}>清除</Button>
-                      <Button variant="primary" size="sm" onClick={handleExport} icon={<Save size={16} />}>导出结果</Button>
+                      <Button variant="primary" size="sm" onClick={handleExport} icon={<Save size={16} />}>保存 Excel</Button>
                     </div>
                   </div>
                   <div className="overflow-x-auto border rounded-lg max-h-96">
@@ -278,15 +358,29 @@ const App: React.FC = () => {
                         <tr>
                           {INPUT_FEATURES.map(f => <th key={f} className="px-3 py-2 text-left font-medium text-gray-500 uppercase">{f}</th>)}
                           <th className="px-3 py-2 text-left font-bold text-brand-600 bg-brand-50">预测采集量</th>
-                          <th className="px-3 py-2 text-left font-medium text-gray-500">置信区间 (80%)</th>
+                          <th className="px-3 py-2 text-left font-medium text-gray-500 text-center">80% 置信区间</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {previewData.map((row, idx) => (
                           <tr key={idx} className="hover:bg-gray-50">
                             {INPUT_FEATURES.map(f => <td key={f} className="px-3 py-2">{row[f]}</td>)}
-                            <td className="px-3 py-2 font-bold text-brand-600 bg-brand-50/30">{row['预测采集量']}</td>
-                            <td className="px-3 py-2 text-gray-500">[{row['预测下限']} - {row['预测上限']}]</td>
+                            <td className={`px-3 py-2 font-bold ${row._IS_CLIPPED ? 'text-amber-600 bg-amber-50' : 'text-brand-600 bg-brand-50/30'}`}>
+                              <div className="flex items-center gap-1">
+                                {row['预测采集量']}
+                                { /* Wrap ShieldCheck icon in a span to provide 'title' attribute since Lucide components don't support it directly in their prop types */ }
+                                {row._IS_CLIPPED && (
+                                  <span title="已触发基线限幅修正">
+                                    <ShieldCheck size={12} className="text-amber-500" />
+                                  </span>
+                                )}
+                              </div>
+                            </td>
+                            <td className="px-3 py-2 text-gray-500 text-center">
+                              <span className="bg-gray-100 px-2 py-0.5 rounded-full">
+                                {row['预测下限']} ~ {row['预测上限']}
+                              </span>
+                            </td>
                           </tr>
                         ))}
                       </tbody>
