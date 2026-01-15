@@ -1,6 +1,6 @@
 
 import * as XLSX from 'xlsx';
-import { DataRow, ModelType, TrainingMetrics, RidgeModel, GBDTModel, ModelData, INPUT_FEATURES, MODEL_FEATURES, TARGET } from '../types';
+import { DataRow, ModelType, TrainingMetrics, RidgeModel, GBDTModel, ModelData, INPUT_FEATURES, RIDGE_FEATURES, GBDT_FEATURES, TARGET } from '../types';
 import { STORAGE_KEYS, MODEL_CONFIGS } from '../constants';
 import { trainRidge, predictRidge, trainGBDT, predictGBDT, calculateR2, calculateMAE } from './mlEngine';
 import { dbService } from './db';
@@ -75,9 +75,10 @@ export const downloadSummary = async (modelType: ModelType) => {
 
   if (modelType !== ModelType.ONLINE) {
     const ridge = model as RidgeModel;
-    content["权重分配"] = MODEL_FEATURES.reduce((acc, f, i) => ({ ...acc, [f]: ridge.weights[i].toFixed(4) }), {});
+    content["权重分配"] = RIDGE_FEATURES.reduce((acc, f, i) => ({ ...acc, [f]: ridge.weights[i].toFixed(4) }), {});
     content["截距"] = ridge.intercept.toFixed(4);
   } else {
+    content["算法特征"] = (model as GBDTModel).featureNames;
     content["树数量"] = (model as GBDTModel).trees.length;
     content["学习率"] = (model as GBDTModel).learningRate;
   }
@@ -107,21 +108,37 @@ export const trainFromData = async (
   
   let modelPayload: ModelData;
   let predictions: number[];
-  const yTrue = processedData.map(r => Number(r[TARGET]));
+  const yTrueTotal = processedData.map(r => Number(r[TARGET]));
 
   if (modelType === ModelType.ONLINE) {
-    const params = await trainGBDT(processedData);
-    predictions = processedData.map(r => predictGBDT(params, r).mean);
+    // For ONLINE XGBoost:
+    // 1. Convert Target to Daily Volume: Total / Days
+    // 2. Train on GBDT_FEATURES (exclude '采集天数')
+    const trainingDataWithDailyTarget = processedData.map(r => ({
+      ...r,
+      'DAILY_TARGET': (Number(r[TARGET]) || 0) / Math.max(1, Number(r['采集天数']) || 1)
+    }));
+
+    const params = await trainGBDT(trainingDataWithDailyTarget, GBDT_FEATURES, 'DAILY_TARGET');
+    
+    // Evaluate on original TOTAL volume to calculate R2/MAE correctly
+    predictions = processedData.map(r => {
+      const dailyPred = predictGBDT(params, r).mean;
+      const days = Number(r['采集天数']) || 0;
+      return dailyPred * days; // Scale back up to total volume for metric calculation
+    });
+
     modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
   } else {
+    // For RIDGE: Regular training including '采集天数' in linear weights
     const params = await trainRidge(processedData);
     predictions = processedData.map(r => predictRidge(params, r).mean);
     modelPayload = { type: modelType, ...params, metrics: { r2: 0, mae: 0, sampleSize: 0, lastUpdated: '' } };
   }
   
   const metrics: TrainingMetrics = {
-    r2: calculateR2(yTrue, predictions),
-    mae: calculateMAE(yTrue, predictions),
+    r2: calculateR2(yTrueTotal, predictions),
+    mae: calculateMAE(yTrueTotal, predictions),
     sampleSize: data.length,
     lastUpdated: new Date().toLocaleString()
   };
@@ -168,14 +185,28 @@ export const handlePredict = async (
 
   const results = data.map(row => {
     const processedRow = preprocessRow(row);
-    const preds = modelType === ModelType.ONLINE 
-      ? predictGBDT(model as GBDTModel, processedRow)
-      : predictRidge(model as RidgeModel, processedRow);
+    let mean: number, lower: number, upper: number;
+
+    if (modelType === ModelType.ONLINE) {
+      // Logic for Online XGBoost: Linear scale by days after nonlinear prediction
+      const days = Number(row['采集天数']) || 0;
+      const preds = predictGBDT(model as GBDTModel, processedRow);
+      mean = preds.mean * days;
+      lower = preds.lowerBound * days;
+      upper = preds.upperBound * days;
+    } else {
+      // Logic for Ridge: Linear weights already include '采集天数' as a feature
+      const preds = predictRidge(model as RidgeModel, processedRow);
+      mean = preds.mean;
+      lower = preds.lowerBound;
+      upper = preds.upperBound;
+    }
+
     return {
       ...row,
-      '预测采集量': Math.round(preds.mean),
-      '预测下限': Math.round(preds.lowerBound),
-      '预测上限': Math.round(preds.upperBound)
+      '预测采集量': Math.round(mean),
+      '预测下限': Math.round(lower),
+      '预测上限': Math.round(upper)
     };
   });
 

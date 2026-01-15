@@ -50,7 +50,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '初始化训练...' });
       const newMetrics = await handleTrain(e.target.files[0], currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setMetrics(newMetrics);
-      setStatus({ type: 'success', msg: `模型训练完成！使用 ${currentModel === ModelType.ONLINE ? 'XGBoost (非线性)' : 'Ridge (线性)'} 引擎。` });
+      setStatus({ type: 'success', msg: `模型训练完成！${currentModel === ModelType.ONLINE ? '已应用天数线性放大逻辑。' : ''}` });
       setPreviewData(null); 
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '训练失败' });
@@ -96,7 +96,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '正在预测...' });
       const results = await handlePredict(file, currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setPreviewData(results);
-      setStatus({ type: 'success', msg: '预测完成！基于集成树/线性权重计算。' });
+      setStatus({ type: 'success', msg: '预测完成！' });
     } catch (err: any) {
       setStatus({ type: 'error', msg: err.message || '预测失败' });
     } finally {
@@ -221,9 +221,12 @@ const App: React.FC = () => {
             <div className="bg-brand-50 p-4 rounded-lg border border-brand-100 text-xs text-brand-800">
               <h4 className="font-bold flex items-center gap-2 mb-1"><AlertCircle size={14}/> 算法逻辑说明</h4>
               {currentModel === ModelType.ONLINE ? (
-                <p>当前使用 <b>梯度提升回归树 (GBDT/XGBoost)</b>。通过多棵决策树集成学习，能够捕捉复杂的非线性关系。适合处理数据量大、关系复杂的在线业务场景。</p>
+                <div className="space-y-2">
+                  <p>当前使用 <b>梯度提升回归树 (XGBoost)</b>。</p>
+                  <p className="text-blue-700 font-semibold underline decoration-blue-300">专项优化：采集天数不参与内部权重，通过学习“日均采集量”并在最后按天数线性乘回，确保长期预测的线性逻辑。</p>
+                </div>
               ) : (
-                <p>当前使用 <b>岭回归 (Ridge Regression)</b>。通过线性组合特征进行预测，并使用 L2 正则化防止过拟合。在样本量较小时具有极佳的稳定性与可解释性。</p>
+                <p>当前使用 <b>岭回归 (Ridge Regression)</b>。采集天数作为普通线性特征参与全局权重计算，适合处理小样本稳定性需求。</p>
               )}
             </div>
           </div>
