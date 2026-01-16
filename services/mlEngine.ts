@@ -50,15 +50,27 @@ const median = (arr: number[]) => {
 };
 
 /**
- * Calculates robust coefficients for the baseline using median of ratios.
+ * Calculates robust coefficients for the baseline using the formula:
+ * Ratio = Total Collection / (Collection Days * Total Metric Count)
  */
-const calculateRobustBaselineCoeffs = (X: number[][], y: number[]) => {
-  const ratioNotes = y.map((val, i) => val / Math.max(X[i][0], 1));
-  const ratioLikes = y.map((val, i) => val / Math.max(X[i][1], 1));
+const calculateRobustBaselineCoeffs = (data: DataRow[]) => {
+  const ratiosNotes = data.map(row => {
+    const yieldTotal = Number(row[TARGET]) || 0;
+    const days = Math.max(1, Number(row['采集天数']) || 1);
+    const notesTotal = Math.max(1, Number(row['笔记数']) || 1);
+    return yieldTotal / (days * notesTotal);
+  });
+
+  const ratiosLikes = data.map(row => {
+    const yieldTotal = Number(row[TARGET]) || 0;
+    const days = Math.max(1, Number(row['采集天数']) || 1);
+    const likesTotal = Math.max(1, Number(row['点赞数']) || 1);
+    return yieldTotal / (days * likesTotal);
+  });
   
   return [
-    Math.max(0, median(ratioNotes)),
-    Math.max(0, median(ratioLikes))
+    Math.max(0, median(ratiosNotes)),
+    Math.max(0, median(ratiosLikes))
   ];
 };
 
@@ -75,58 +87,6 @@ export const calculateR2 = (yTrue: number[], yPred: number[]): number => {
   const ssTot = yTrue.reduce((sum, val) => sum + Math.pow(val - meanY, 2), 0);
   const ssRes = yTrue.reduce((sum, val, i) => sum + Math.pow(val - yPred[i], 2), 0);
   return ssTot === 0 ? 0 : 1 - (ssRes / ssTot);
-};
-
-// --- Ridge Logic ---
-
-const getScaler = (X: number[][]) => {
-  const n = X.length;
-  if (n === 0) return { means: [], stds: [] };
-  const p = X[0].length;
-  const means = Array(p).fill(0);
-  const stds = Array(p).fill(0);
-  for (let j = 0; j < p; j++) {
-    const col = X.map(row => row[j]);
-    means[j] = col.reduce((a, b) => a + b, 0) / n;
-    const variance = col.reduce((a, b) => a + Math.pow(b - means[j], 2), 0) / n;
-    stds[j] = Math.sqrt(variance) || 1; 
-  }
-  return { means, stds };
-};
-
-const scale = (X: number[][], scaler: { means: number[], stds: number[] }) => {
-  return X.map(row => row.map((val, j) => (val - scaler.means[j]) / scaler.stds[j]));
-};
-
-export const trainRidge = async (data: DataRow[], alpha = 1.0) => {
-  const n = data.length;
-  const p = RIDGE_FEATURES.length;
-  const X_raw = data.map(row => RIDGE_FEATURES.map(f => Number(row[f]) || 0));
-  const y = data.map(row => [Number(row[TARGET]) || 0]);
-  const scaler = getScaler(X_raw);
-  const X_scaled = scale(X_raw, scaler);
-  const X = X_scaled.map(row => [1, ...row]);
-  const XT = transpose(X);
-  const XTX = multiply(XT, X);
-  for (let i = 1; i < XTX.length; i++) XTX[i][i] += alpha;
-  const XTX_inv = invert(XTX);
-  const XTy = multiply(XT, y);
-  const weights_all = multiply(XTX_inv, XTy).map(row => row[0]);
-  
-  const yTrue = y.map(row => row[0]);
-  const yPred = X.map(row => weights_all.reduce((sum, w, i) => sum + w * row[i], 0));
-  const residualVariance = yTrue.reduce((sum, val, i) => sum + Math.pow(val - yPred[i], 2), 0) / Math.max(1, (n - p - 1));
-  const residualStd = Math.sqrt(Math.max(0, residualVariance));
-  
-  return { weights: weights_all.slice(1), intercept: weights_all[0], scaler, residualStd };
-};
-
-export const predictRidge = (model: Omit<RidgeModel, 'type' | 'metrics'>, row: DataRow) => {
-  const x_raw = RIDGE_FEATURES.map(f => Number(row[f]) || 0);
-  const x_scaled = x_raw.map((val, i) => (val - model.scaler.means[i]) / model.scaler.stds[i]);
-  const mean = model.intercept + x_scaled.reduce((sum, val, i) => sum + val * model.weights[i], 0);
-  const margin = 1.28 * model.residualStd;
-  return { mean, lowerBound: Math.max(0, mean - margin), upperBound: mean + margin };
 };
 
 // --- GBDT Logic ---
@@ -176,7 +136,7 @@ export const trainGBDT = async (data: DataRow[], featureNames: string[], targetN
   const X = data.map(row => featureNames.map(f => Number(row[f]) || 0));
   const y = data.map(row => Number(row[targetName]) || 0);
   
-  const baselineCoeffs = calculateRobustBaselineCoeffs(X, y);
+  const baselineCoeffs = calculateRobustBaselineCoeffs(data);
 
   const initialMean = y.reduce((a, b) => a + b, 0) / y.length;
   let currentPreds = Array(y.length).fill(initialMean);
@@ -195,8 +155,8 @@ export const trainGBDT = async (data: DataRow[], featureNames: string[], targetN
 
 export interface GuardrailOptions {
   enabled: boolean;
-  lowPercent: number; // e.g. 30
-  highPercent: number; // e.g. 170
+  lowPercent: number; 
+  highPercent: number; 
 }
 
 export const predictGBDT = (
@@ -206,7 +166,7 @@ export const predictGBDT = (
 ) => {
   const x = model.featureNames.map(f => Number(row[f]) || 0);
   
-  // 1. GBDT Raw Prediction
+  // 1. GBDT Raw Prediction (predicts 'daily intensity')
   let gbdtDaily = model.initialMean;
   for (const tree of model.trees) {
     gbdtDaily += model.learningRate * predictTree(tree, x);
@@ -219,7 +179,13 @@ export const predictGBDT = (
   if (guardrail.enabled) {
     const kNotes = model.baselineCoeffs[0];
     const kLikes = model.baselineCoeffs[1];
-    const baselineDaily = (kNotes * x[0] + kLikes * x[1]) / 2;
+    
+    // Baseline logic: K * Total_Metric
+    // Features are now always raw counts (Notes, Likes) for both models.
+    const notesTotal = Number(row['笔记数']) || 0;
+    const likesTotal = Number(row['点赞数']) || 0;
+
+    const baselineDaily = (kNotes * notesTotal + kLikes * likesTotal) / 2;
     
     const minDaily = baselineDaily * (guardrail.lowPercent / 100);
     const maxDaily = baselineDaily * (guardrail.highPercent / 100);

@@ -56,7 +56,7 @@ const App: React.FC = () => {
       setStatus({ type: 'loading', msg: '初始化训练...' });
       const newMetrics = await handleTrain(e.target.files[0], currentModel, (msg) => setStatus({ type: 'loading', msg }));
       setMetrics(newMetrics);
-      const modeDesc = currentModel === ModelType.RECALL ? "已启用日均强度学习与天数放大" : "已启用总量直接推理";
+      const modeDesc = currentModel === ModelType.RECALL ? "已启用日均强度学习与线性天数放大" : "已启用总量直接推理";
       setStatus({ type: 'success', msg: `模型训练完成！${modeDesc}。` });
       setPreviewData(null); 
     } catch (err: any) {
@@ -174,7 +174,7 @@ const App: React.FC = () => {
               <Activity className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.4</h1>
+              <h1 className="text-xl font-bold text-gray-900 tracking-tight">采集量预测系统 v2.6</h1>
               <p className="text-xs text-gray-500">Hybrid Intensity & Total Yield Predictor</p>
             </div>
           </div>
@@ -239,17 +239,21 @@ const App: React.FC = () => {
             <div className="bg-brand-50 p-4 rounded-lg border border-brand-100 text-xs text-brand-800">
               <h4 className="font-bold flex items-center gap-2 mb-1"><AlertCircle size={14}/> 算法逻辑说明</h4>
               <div className="space-y-2 text-slate-700">
-                <p><b>XGBoost 推理引擎：</b></p>
+                <p><b>XGBoost 物理约束引擎：</b></p>
                 {isDailyMode ? (
-                  <p className="bg-white/50 p-2 rounded border border-brand-200">
-                    <span className="text-brand-700 font-bold">回溯模式（强度学习）：</span><br/>
-                    系统自动将数据对齐至“日均”量级，预测时基于学习到的日均系数乘以【采集天数】进行线性放大。
-                    <span className="text-blue-700 font-semibold italic block mt-1">支持：通过中位数比值法建立基线限幅，防止离群值干扰。</span>
-                  </p>
+                  <div className="bg-white/50 p-2 rounded border border-brand-200 space-y-2">
+                    <p><span className="text-brand-700 font-bold">回溯模式（强度学习）：</span><br/>
+                    系统学习“基于指标总量的日均效能”，通过【采集天数】进行线性放大。
+                    </p>
+                    <div className="text-blue-700 font-semibold italic border-t pt-1">
+                      <p>稳健基线限幅：</p>
+                      <p>基于历史中位数产出效率计算业务基准，对模型偏离过大的预测值进行自动修正，确保预测在合理范围内。</p>
+                    </div>
+                  </div>
                 ) : (
                   <p className="bg-white/50 p-2 rounded border border-brand-200">
                     <span className="text-brand-700 font-bold">在线模式（总量推理）：</span><br/>
-                    直接建立指标总量与产出总量的映射。不涉及天数除法，更贴合单天的业务场景。
+                    直接建立指标总量与产出总量的映射。不涉及天数除法。
                     <span className="text-slate-500 italic block mt-1">注：此模式下不启用基线限幅。</span>
                   </p>
                 )}
@@ -260,7 +264,7 @@ const App: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             <Card title="数据学习">
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">上传 Excel 训练数据。系统将根据{isDailyMode ? '日均强度' : '总量级'}提取业务产出系数并拟合 XGBoost。</p>
+                <p className="text-sm text-gray-600">上传 Excel 训练数据。系统将根据{isDailyMode ? '日均强度效能' : '指标总量级'}拟合 XGBoost 产出路径。</p>
                 <div className="flex flex-wrap gap-3">
                   <input type="file" ref={trainInputRef} onChange={onTrainFileChange} accept=".xlsx,.xls" className="hidden" />
                   <Button onClick={() => trainInputRef.current?.click()} icon={<Upload size={18} />}>上传并训练</Button>
@@ -280,7 +284,7 @@ const App: React.FC = () => {
             <Card title="流量预测">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-600">基于已学习的产出路径进行推理。{isDailyMode ? '采集天数将作为线性放大系数。' : '直接基于总量进行映射。'}</p>
+                  <p className="text-sm text-gray-600">基于已学习的产出效能进行推理。{isDailyMode ? '采集天数将作为总量的线性放大系数。' : '直接基于总量指标进行映射。'}</p>
                   {isDailyMode && (
                     <button 
                       onClick={() => setShowAdvance(!showAdvance)}
@@ -303,7 +307,7 @@ const App: React.FC = () => {
                         className="w-4 h-4 text-brand-600 rounded focus:ring-brand-500"
                       />
                       <label htmlFor="guardrail_toggle" className="text-sm font-semibold text-gray-700 flex items-center gap-1">
-                        启用稳健基线限幅 <span className="text-xs font-normal text-gray-400">(强制预测值回归业务基线)</span>
+                        启用稳健基线限幅 <span className="text-xs font-normal text-gray-400">(基于指标总量的日均效能基准)</span>
                       </label>
                     </div>
                     

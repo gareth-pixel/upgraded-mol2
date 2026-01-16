@@ -2,17 +2,14 @@
 import * as XLSX from 'xlsx';
 import { DataRow, ModelType, TrainingMetrics, RidgeModel, GBDTModel, ModelData, INPUT_FEATURES, RIDGE_FEATURES, GBDT_FEATURES, TARGET } from '../types';
 import { STORAGE_KEYS, MODEL_CONFIGS } from '../constants';
-import { trainRidge, predictRidge, trainGBDT, predictGBDT, calculateR2, calculateMAE, GuardrailOptions } from './mlEngine';
+// Removed trainRidge and predictRidge from mlEngine imports as they are not exported and the engine now uses GBDT exclusively.
+import { trainGBDT, predictGBDT, calculateR2, calculateMAE, GuardrailOptions } from './mlEngine';
 import { dbService } from './db';
 
-// Features used for Daily Intensity learning (RECALL model)
-const DAILY_GBDT_FEATURES = [
-  '日均笔记数',
-  '日均点赞数',
-  '日均收藏数',
-  '日均评论数'
-];
-
+/**
+ * Preprocessing now only adds derived daily features for legacy or optional use.
+ * The core RECALL model will now use raw GBDT_FEATURES for better scaling.
+ */
 export const preprocessRow = (row: DataRow): DataRow => {
   const days = Math.max(0, Number(row['采集天数']) || 0);
   const processed: DataRow = { ...row };
@@ -91,8 +88,8 @@ export const downloadSummary = async (modelType: ModelType) => {
       "业务产出效率 (k_notes)": gbdt.baselineCoeffs[0].toFixed(6),
       "业务产出效率 (k_likes)": gbdt.baselineCoeffs[1].toFixed(6)
     };
-    content["预测逻辑"] = "周期强度学习 (Yield/Days) + 天数线性放大";
-    content["限幅说明"] = "支持在预测时动态配置限幅区间。";
+    content["预测逻辑"] = "强度学习: 基于指标总量预测日均产量 + 天数线性放大";
+    content["限幅说明"] = "支持基于指标总量的日均基线限幅。";
   } else {
     content["预测逻辑"] = "单日总量直接推理 (Yield/1Day)";
     content["限幅说明"] = "不适用 (采用纯模型原始输出)";
@@ -123,10 +120,10 @@ export const trainFromData = async (
   onProgress?.("正在进行特征预处理...");
   const processedData = data.map(preprocessRow);
 
-  onProgress?.(`正在执行模型训练 (模式: ${isRecall ? '强度学习' : '总量学习'})...`);
+  onProgress?.(`正在执行模型训练 (${isRecall ? '产量强度学习' : '总量直接推理'})...`);
   await new Promise(resolve => setTimeout(resolve, 100));
   
-  // Decide target and features based on model type
+  // Normalized target for RECALL, Raw target for ONLINE
   const trainingDataWithTarget = processedData.map(r => {
     const days = isRecall ? Math.max(1, Number(r['采集天数']) || 1) : 1;
     return {
@@ -135,7 +132,12 @@ export const trainFromData = async (
     };
   });
 
-  const featuresToUse = isRecall ? DAILY_GBDT_FEATURES : GBDT_FEATURES;
+  /**
+   * IMPORTANT: Both models now use GBDT_FEATURES (raw counts).
+   * RECALL learns: Yield/Days ~ f(Raw_Metrics)
+   * ONLINE learns: Yield ~ f(Raw_Metrics)
+   */
+  const featuresToUse = GBDT_FEATURES;
   const params = await trainGBDT(trainingDataWithTarget, featuresToUse, 'TRAIN_TARGET');
   
   const predictions = processedData.map(r => {
@@ -199,6 +201,7 @@ export const handlePredict = async (
   const isRecall = modelType === ModelType.RECALL;
 
   const results = data.map(row => {
+    // RECALL now uses raw indicators to predict daily intensity
     const processedRow = preprocessRow(row);
     
     // Force guardrail off for non-recall models
@@ -208,7 +211,12 @@ export const handlePredict = async (
 
     const preds = predictGBDT(model, processedRow, activeGuardrail);
     
-    // Scale only for RECALL model
+    /**
+     * Scaling Logic:
+     * preds.mean is always 'yield per day' (either directly or normalized during training).
+     * For RECALL: Multiply by input days.
+     * For ONLINE: multiplier is 1.
+     */
     const multiplier = isRecall ? (Number(row['采集天数']) || 0) : 1;
     const mean = preds.mean * multiplier;
     const lower = preds.lowerBound * multiplier;
