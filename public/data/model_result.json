@@ -10419,5 +10419,8052 @@
         "采集量": 2583
       }
     ]
+  },
+  "rf_model_telecom": {
+    "model": {
+      "type": "rf_model_telecom",
+      "initialMean": 120.34380453752182,
+      "learningRate": 0.1,
+      "trees": [
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 581,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 5678.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 28.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -109.55592574964292
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -94.3778954466126
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 41,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -68.09380453752182
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -46.34380453752182
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 46.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 44.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 60.04749981030422
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1356.406195462478
+                }
+              },
+              "right": {
+                "featureIndex": 2,
+                "threshold": 16727,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -31.288821719652557
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 87.4561954624781
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 946.9061954624782
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 728.1561954624782
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 635.4895287958115
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 246.1561954624782
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 142.6561954624782
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 157.1561954624782
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 581,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 5678.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 28.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -98.6003331746789
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -84.94010590195161
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 41,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -61.284424083769636
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -41.70942408376963
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 46.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 44.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 54.04274982927387
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1220.7655759162303
+                }
+              },
+              "right": {
+                "featureIndex": 2,
+                "threshold": 16727,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -28.159939547687053
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 78.71057591623031
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 852.2155759162304
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 639.4294648051192
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 554.107242582897
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 221.54057591623035
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 128.39057591623035
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 141.44057591623036
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 581,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 5678.5,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 2250.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -76.21287603103708
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -89.66261046327156
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 41,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -55.15598167539267
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -37.538481675392674
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 46.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 44.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 48.63847484634643
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1098.6890183246073
+                }
+              },
+              "right": {
+                "featureIndex": 2,
+                "threshold": 16727,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -25.343945592918413
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 70.83951832460734
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 766.9940183246074
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 591.3976294357185
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 513.6857775838666
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 199.38651832460732
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 115.55151832460731
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 127.2965183246073
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 2516,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 1180.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -74.5851981142343
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 9.459585556477428
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1901.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -76.80748533142513
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -103.91716543044343
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 988.8201164921466
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -12.087052870116658
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 172.47222404908243
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 690.2946164921466
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 518.9371504427639
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 447.3279405662206
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 179.4478664921466
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 103.99636649214663
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 114.56686649214657
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 581,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 13.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -84.05948234167363
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -64.20666438136236
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 5210.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 28.959348253258177
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -70.40815960066972
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 889.9381048429319
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -10.878347583104965
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 155.22500164417414
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 621.2651548429319
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 480.3641514478702
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 415.19743210630645
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 161.50307984293195
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 93.59672984293195
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 103.11017984293193
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1962.5,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 581,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 47,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -73.17330086632272
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -56.07349749071432
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12747,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 16.01200986788381
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -59.4794554400535
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5055,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 800.9442943586387
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12337.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -86.48463292733213
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 58.75129005518011
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 559.1386393586388
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 421.17924423175253
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 361.0754032989679
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 145.3527718586388
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 84.23705685863877
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 92.79916185863874
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 2489,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 1180.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -55.27529742524715
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 10.531558421377254
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1901.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -57.8370287516635
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -77.8361696345989
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 720.8498649227748
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -9.10269803814507
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 133.82737247423873
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 503.2247754227749
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 390.2098118799079
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 335.56668720135275
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 130.81749467277487
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 75.8133511727749
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 83.51924567277489
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1962.5,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 581,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 28.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -54.712192975743456
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -42.70923037318221
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12747,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 14.888089590882597
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -52.76293060276619
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5055,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 648.7648784304973
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12337.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -70.05255267113897
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 50.03451650252661
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 452.9022978804974
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 341.86177610987164
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 291.41119424893583
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 117.73574520549738
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 68.23201605549741
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 75.16732110549741
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1962.5,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 581,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 28.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -49.24097367816909
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -38.438307335863996
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12747,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 13.399280631794356
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -47.486637542489554
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5055,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 583.8883905874476
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12337.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -63.04729740402507
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 45.03106485227387
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 407.61206809244766
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 317.0026530809299
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 271.1872129942927
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 105.96217068494764
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 61.40881444994767
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 67.65058899494764
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 2489,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 1180.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -41.375554964728934
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 8.71018193293612
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 1901.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -46.043565410188094
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -56.742567663622616
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 525.4995515287028
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -6.972538892187282
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 110.93807709133482
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 366.8508612832029
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 277.50251452701275
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 235.151353524613
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 95.36595361645288
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 55.26793300495291
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 60.88553009545288
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1962.5,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 581,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 109,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -23.871962979137948
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -37.309628137438125
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12747,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 12.402492479702584
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -42.15389417301767
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5055,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 472.94959637583247
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 12337.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -51.06831089726035
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 38.13005858669775
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 330.16577515488257
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 257.5521363201357
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 219.14165097565555
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 85.82935825480757
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 49.74113970445762
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 54.7969770859076
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 5210.5,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 581,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -30.89541580347186
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 19.47681381151199
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 171.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -45.09641592792287
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -15.648415849532586
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 425.65463673824934
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -5.729693560712593
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 96.03126352353155
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 297.1491976393943
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 225.2773989537806
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 189.72205307458626
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 77.2464224293268
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 44.76702573401187
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 49.31727937731685
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1962.5,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 12747,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 814,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -24.999474683209986
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 22.759104533217094
+                }
+              },
+              "right": {
+                "featureIndex": 2,
+                "threshold": 5948,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 17.41983129299982
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -44.292232237050605
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 3,
+              "threshold": 2319.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 55.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 383.08917306442436
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 187.21780624326283
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 39,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 186.73923613598177
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -8.031956548198018
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 267.4342778754549
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 209.269182792744
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 177.0701023746583
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 69.5217801863941
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 40.29032316061068
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 44.38555143958516
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 5210.5,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 4392,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.80496240486986
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 44.445810367445404
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 171.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -39.30924867974036
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -15.825557393879311
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 344.7802557579819
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -3.9054870163916084
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 82.59392347637488
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 240.69085008790944
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 182.89604345973092
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 153.04283752966182
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 62.56960216775468
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 36.26129084454962
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 39.94699629562663
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 50,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.356652949823275
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 21.408756776733643
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 64,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -80.9834798107464
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -32.47307466143205
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 310.3022301821836
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -3.5149383147524347
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 74.33453112873741
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 216.62176507911852
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 170.05266016749647
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 143.06370151989063
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 56.31264195097924
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 32.63516176009466
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 35.95229666606397
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1962.5,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 12747,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 814,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.755360190241184
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 21.15890102483674
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 14719,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -74.6363204424178
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -23.5794015925863
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 3,
+              "threshold": 2319.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 55.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 279.2720071639653
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 169.2380681520509
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 39,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 152.3724670618723
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -6.852992693850075
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 194.95958857120672
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 148.5008050519284
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 123.43218362470657
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 50.68137775588133
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 29.3716455840852
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 32.35706699945757
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 5210.5,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 4392,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -14.311413120599186
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 39.728447097625555
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 171.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -32.038702252030305
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -8.637754029089553
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 251.34480644756877
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 3964,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -2.272382722742372
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 63.79529491011243
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 175.4636297140861
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 138.197313645554
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 115.57849229119013
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 45.6132399802932
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 26.43448102567669
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 29.12136029951182
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 3999,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 905,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -16.541984956464855
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 12.262634380836067
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 64,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -73.5698806200955
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -25.563248239745793
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 5216.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 226.2103258028119
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 13522.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 29.821116454714932
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -8.65592935118844
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 157.9172667426775
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 120.58495389399225
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 99.53111603311686
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 41.05191598226389
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 23.791032923109015
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 26.20922426956065
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 3964,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 34739,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 4359.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -11.377310184401818
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 6.302542317718677
+                }
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -54.110505191098845
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 39,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 127.77357921920233
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 27035,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 2.6125530862561206
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 98.9431925220438
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 142.1255400684097
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 79.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 112.31908689159934
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 93.36573686339693
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 36.94672438403751
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 21.411929630798113
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 23.58830184260458
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 1,
+          "threshold": 37828,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 3964,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 203,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 84.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 0.7746900854537331
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -15.99196605257064
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 230,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 53.68102101984584
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 21.947437674121954
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 39,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 114.99622129728212
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 27035,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 2.351297777630511
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 89.04887326983942
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 127.91298606156874
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 96,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 97.92632814970652
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 80.24143074346557
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 175,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 33.25205194563375
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 250,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 19.270736667718296
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 21.229471658344096
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1962.5,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 28711,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 1031,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 549,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -17.517036583725922
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -71.29446288681936
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 87.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 14.728165735288037
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -11.128821220872766
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 76.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -48.776923680534345
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -42.874896150947
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 3,
+            "threshold": 2319.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 55.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 202.88156998221325
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 152.69936930392169
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 28509,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 39,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 103.49659916755391
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -16.17883507365427
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 101.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 88.81855645988675
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 19.4526511050401
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1962.5,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 28711,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 814,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 172,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -14.483320030045647
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 18.096284140156733
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 870.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 83.2662316852609
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 0.4271012446335665
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 76.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -43.899231312480914
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -38.587406535852296
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 3,
+            "threshold": 2319.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 55.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 182.59341298399204
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 137.42943237352955
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 28509,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 39,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 93.14693925079851
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -14.560951566288859
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 101.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 79.93670081389804
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 17.507385994536104
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 2,
+          "threshold": 16727,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 26583.5,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 4359.5,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 5210.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -3.0052091749278462
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.412588004703952
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 84.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 67.26372721029492
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -3.245834908035523
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 87.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 76.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -39.50930818123284
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -34.72866588226705
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 134.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -19.271390819989747
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -1.1192197618306712
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 98.24616172803337
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 74.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 74.41901966009027
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 60.43138276326533
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 159,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 109,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 26.23084304111279
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -14.329137044236088
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 225,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 44.61691520790363
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 16.609655391063452
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 2,
+          "threshold": 16727,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 1031,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 549,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 24.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -23.85995543139744
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -7.270587690827932
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 51.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -68.55799601626829
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -57.76537346647979
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 84.5,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 5210.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 29.52404846403025
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -1.2829931461614774
+                }
+              },
+              "right": {
+                "featureIndex": 2,
+                "threshold": 8745,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -15.476705598569362
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 1.6907589140275094
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 61,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 88.42154555523007
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 74.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 66.97711769408124
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 54.38824448693879
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 159,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 109,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 23.607758737001518
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -12.896223339812476
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 225,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 40.15522368711328
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 14.948689851957104
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1962.5,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 12747,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 814,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 172,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -11.594789849995134
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 16.62903591565073
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 870.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 68.34153511032146
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 11.186048289797894
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 14719,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 78.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -47.32067212363259
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -66.1601115510128
+                }
+              },
+              "right": {
+                "featureIndex": 2,
+                "threshold": 6466.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 44.9082896308995
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.422086147616994
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 3,
+            "threshold": 2319.5,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 55.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 154.65529411816033
+              },
+              "right": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 117.08841572976318
+              }
+            },
+            "right": {
+              "featureIndex": 2,
+              "threshold": 8820.5,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 5212.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -25.2216490256807
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -5.137017855249577
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 101.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 62.395662942456354
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 5.201810811509888
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1786,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 12747,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 814,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 28.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -17.39322537266047
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -4.0304656626452315
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 870.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 61.50738159928931
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 10.067443460818108
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 96,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 20929.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -57.54933622124772
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -25.136054038841852
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 123,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 190.67216124790906
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -7.751718360164748
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": 5055,
+            "left": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 139.18976470634425
+            },
+            "right": {
+              "featureIndex": 2,
+              "threshold": 8576,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 5212.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -22.699484123112633
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -4.623316069724623
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 87,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 71.52624004716512
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 6.862918644380483
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1786,
+          "left": {
+            "featureIndex": 3,
+            "threshold": 1167.5,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 814,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 172,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -9.799174879509648
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 15.369178890350181
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 870.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 55.3566434393604
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 9.083498529657572
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 3,
+              "threshold": 1395.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 98,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -53.789166773786725
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -75.32839202894321
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 26194,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 29.582513575861462
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -22.622448634957678
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": 5055,
+            "left": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 125.27078823570992
+            },
+            "right": {
+              "featureIndex": 2,
+              "threshold": 8576,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 5212.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -20.429535710801368
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -4.160984462752158
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 87,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 64.37361604244857
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 6.1766267799424694
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 3964,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 37828,
+            "left": {
+              "featureIndex": 0,
+              "threshold": 203,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 92,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -0.5905467269295497
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -13.027372002000975
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 230,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 34.31556569481867
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 16.414680299846577
+                }
+              }
+            },
+            "right": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 59.74983909650007
+            }
+          },
+          "right": {
+            "featureIndex": 0,
+            "threshold": 101.5,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 8476,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": 3.492601053747876
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 50,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 57.404620016098214
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 37.62244884538698
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 12234.5,
+              "left": {
+                "featureIndex": -1,
+                "threshold": 0,
+                "leftValue": -7.3636295515893515
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 7928.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 17.001493047748756
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 9.549119888885102
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1786,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 12747,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 814,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 28.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -14.614930674750491
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -2.7643087192921727
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 97,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 14.890191497112326
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -66.49281562584879
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 96,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 20929.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -45.776593629418855
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -20.30114909876894
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 123,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 169.94943096573212
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -7.379343095377422
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": 5055,
+            "left": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 112.802764084832
+            },
+            "right": {
+              "featureIndex": 2,
+              "threshold": 8576,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 5212.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -17.68562680766975
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -3.3703974148292466
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 74.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 59.96743685945247
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 6.165998395909019
+                }
+              }
+            }
+          }
+        },
+        {
+          "featureIndex": 3,
+          "threshold": 1786,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 12747,
+            "left": {
+              "featureIndex": 3,
+              "threshold": 814,
+              "left": {
+                "featureIndex": 3,
+                "threshold": 679.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -4.2186506411712905
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -20.87223332217392
+                }
+              },
+              "right": {
+                "featureIndex": 3,
+                "threshold": 870.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 48.39101461840608
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 7.167951891596478
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 0,
+              "threshold": 96,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 20929.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -41.19893426647697
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.271034188892052
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 123,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 152.95448786915892
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -6.641408785839687
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": 5055,
+            "left": {
+              "featureIndex": -1,
+              "threshold": 0,
+              "leftValue": 101.52248767634887
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 12337.5,
+              "left": {
+                "featureIndex": 0,
+                "threshold": 87.5,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -18.866698399785626
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": -10.709262762601002
+                }
+              },
+              "right": {
+                "featureIndex": 0,
+                "threshold": 87,
+                "left": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 42.14255397442439
+                },
+                "right": {
+                  "featureIndex": -1,
+                  "threshold": 0,
+                  "leftValue": 4.499869517284302
+                }
+              }
+            }
+          }
+        }
+      ],
+      "residualStd": 68.81812537570855,
+      "featureNames": [
+        "笔记数",
+        "点赞数",
+        "收藏数",
+        "评论数"
+      ],
+      "baselineCoeffs": [
+        0.6555555555555556,
+        0.00598702810577083
+      ],
+      "metrics": {
+        "r2": 0.8810070882005591,
+        "mae": 43.15598570313523,
+        "sampleSize": 573,
+        "lastUpdated": "2026/1/16 11:28:51"
+      }
+    },
+    "data": [
+      {
+        "采集天数": 1,
+        "笔记数": 94,
+        "点赞数": 59645,
+        "收藏数": 25362,
+        "评论数": 7832,
+        "采集量": 434
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 94,
+        "点赞数": 59645,
+        "收藏数": 25362,
+        "评论数": 7832,
+        "采集量": 1149
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 64,
+        "点赞数": 13468,
+        "收藏数": 5415,
+        "评论数": 614,
+        "采集量": 36
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 64,
+        "点赞数": 13468,
+        "收藏数": 5415,
+        "评论数": 614,
+        "采集量": 51
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 99,
+        "点赞数": 24094,
+        "收藏数": 5849,
+        "评论数": 1629,
+        "采集量": 247
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 99,
+        "点赞数": 24094,
+        "收藏数": 5849,
+        "评论数": 1629,
+        "采集量": 305
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 96,
+        "点赞数": 15551,
+        "收藏数": 8278,
+        "评论数": 2532,
+        "采集量": 93
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 5299,
+        "收藏数": 1566,
+        "评论数": 888,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 5299,
+        "收藏数": 1566,
+        "评论数": 888,
+        "采集量": 99
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 5299,
+        "收藏数": 1566,
+        "评论数": 888,
+        "采集量": 28
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 188,
+        "点赞数": 1044,
+        "收藏数": 164,
+        "评论数": 197,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 188,
+        "点赞数": 1044,
+        "收藏数": 164,
+        "评论数": 197,
+        "采集量": 73
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 188,
+        "点赞数": 1044,
+        "收藏数": 164,
+        "评论数": 197,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 123,
+        "点赞数": 6775,
+        "收藏数": 2497,
+        "评论数": 775,
+        "采集量": 53
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 156,
+        "点赞数": 627,
+        "收藏数": 305,
+        "评论数": 388,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 123,
+        "点赞数": 6775,
+        "收藏数": 2497,
+        "评论数": 775,
+        "采集量": 76
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 156,
+        "点赞数": 627,
+        "收藏数": 305,
+        "评论数": 388,
+        "采集量": 38
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 123,
+        "点赞数": 6775,
+        "收藏数": 2497,
+        "评论数": 775,
+        "采集量": 53
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 156,
+        "点赞数": 627,
+        "收藏数": 305,
+        "评论数": 388,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 63,
+        "点赞数": 3437,
+        "收藏数": 743,
+        "评论数": 1027,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 949,
+        "收藏数": 400,
+        "评论数": 708,
+        "采集量": 24
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 44,
+        "点赞数": 300,
+        "收藏数": 96,
+        "评论数": 51,
+        "采集量": 144
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 63,
+        "点赞数": 3437,
+        "收藏数": 743,
+        "评论数": 1027,
+        "采集量": 33
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 949,
+        "收藏数": 400,
+        "评论数": 708,
+        "采集量": 53
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 44,
+        "点赞数": 300,
+        "收藏数": 96,
+        "评论数": 51,
+        "采集量": 294
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 63,
+        "点赞数": 3437,
+        "收藏数": 743,
+        "评论数": 1027,
+        "采集量": 18
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 949,
+        "收藏数": 400,
+        "评论数": 708,
+        "采集量": 44
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 44,
+        "点赞数": 300,
+        "收藏数": 96,
+        "评论数": 51,
+        "采集量": 125
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 103,
+        "点赞数": 3988,
+        "收藏数": 1582,
+        "评论数": 1284,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 12,
+        "点赞数": 652,
+        "收藏数": 233,
+        "评论数": 175,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 7,
+        "点赞数": 278,
+        "收藏数": 129,
+        "评论数": 117,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 103,
+        "点赞数": 3988,
+        "收藏数": 1582,
+        "评论数": 1284,
+        "采集量": 66
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 7,
+        "点赞数": 278,
+        "收藏数": 129,
+        "评论数": 117,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 103,
+        "点赞数": 3988,
+        "收藏数": 1582,
+        "评论数": 1284,
+        "采集量": 40
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 22
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 298
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 248
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 282
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 263
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 20
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 307
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 201
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 257
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 280
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 17
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 352
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 244
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 234
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 266
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 197
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 198
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 231
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 222
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 53
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 257
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 199
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 317
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 269
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 18
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 278
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 210
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 273
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 257
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 244
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 195
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 223
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 328
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 128,
+        "点赞数": 5703,
+        "收藏数": 2953,
+        "评论数": 6880,
+        "采集量": 10
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 295,
+        "点赞数": 18766,
+        "收藏数": 17180,
+        "评论数": 4523,
+        "采集量": 211
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 205,
+        "点赞数": 29388,
+        "收藏数": 22605,
+        "评论数": 3733,
+        "采集量": 183
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 245,
+        "点赞数": 42020,
+        "收藏数": 30525,
+        "评论数": 10353,
+        "采集量": 287
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 57059,
+        "收藏数": 50402,
+        "评论数": 12407,
+        "采集量": 335
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 22726,
+        "收藏数": 8874,
+        "评论数": 2096,
+        "采集量": 364
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 10343,
+        "收藏数": 3011,
+        "评论数": 715,
+        "采集量": 36
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 554,
+        "收藏数": 214,
+        "评论数": 86,
+        "采集量": "0"
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 13480,
+        "收藏数": 9363,
+        "评论数": 4194,
+        "采集量": 155
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 2279,
+        "收藏数": 2751,
+        "评论数": 107,
+        "采集量": "0"
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 10461,
+        "收藏数": 3676,
+        "评论数": 950,
+        "采集量": 21
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 3375,
+        "收藏数": 1006,
+        "评论数": 390,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 7239,
+        "收藏数": 10745,
+        "评论数": 1507,
+        "采集量": 59
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 212,
+        "收藏数": 66,
+        "评论数": 43,
+        "采集量": 6
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 1278,
+        "收藏数": 913,
+        "评论数": 382,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 2281,
+        "收藏数": 713,
+        "评论数": 286,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 60,
+        "点赞数": 6026,
+        "收藏数": 5095,
+        "评论数": 355,
+        "采集量": 31
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 861,
+        "收藏数": 407,
+        "评论数": 193,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 530,
+        "收藏数": 186,
+        "评论数": 159,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 269,
+        "收藏数": 122,
+        "评论数": 43,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 150,
+        "收藏数": 70,
+        "评论数": 86,
+        "采集量": 10
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 29,
+        "点赞数": 1217,
+        "收藏数": 480,
+        "评论数": 174,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 25,
+        "点赞数": 1558,
+        "收藏数": 2308,
+        "评论数": 224,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 22726,
+        "收藏数": 8874,
+        "评论数": 2096,
+        "采集量": 492
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 10343,
+        "收藏数": 3011,
+        "评论数": 715,
+        "采集量": 87
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 554,
+        "收藏数": 214,
+        "评论数": 86,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 13480,
+        "收藏数": 9363,
+        "评论数": 4194,
+        "采集量": 467
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 2279,
+        "收藏数": 2751,
+        "评论数": 107,
+        "采集量": 17
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 10461,
+        "收藏数": 3676,
+        "评论数": 950,
+        "采集量": 95
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 3375,
+        "收藏数": 1006,
+        "评论数": 390,
+        "采集量": 17
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 7239,
+        "收藏数": 10745,
+        "评论数": 1507,
+        "采集量": 195
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 212,
+        "收藏数": 66,
+        "评论数": 43,
+        "采集量": 16
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 1278,
+        "收藏数": 913,
+        "评论数": 382,
+        "采集量": 31
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 2281,
+        "收藏数": 713,
+        "评论数": 286,
+        "采集量": 16
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 60,
+        "点赞数": 6026,
+        "收藏数": 5095,
+        "评论数": 355,
+        "采集量": 90
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 861,
+        "收藏数": 407,
+        "评论数": 193,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 530,
+        "收藏数": 186,
+        "评论数": 159,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 269,
+        "收藏数": 122,
+        "评论数": 43,
+        "采集量": 9
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 150,
+        "收藏数": 70,
+        "评论数": 86,
+        "采集量": 46
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 29,
+        "点赞数": 1217,
+        "收藏数": 480,
+        "评论数": 174,
+        "采集量": 92
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 25,
+        "点赞数": 1558,
+        "收藏数": 2308,
+        "评论数": 224,
+        "采集量": 59
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 22726,
+        "收藏数": 8874,
+        "评论数": 2096,
+        "采集量": 353
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 10343,
+        "收藏数": 3011,
+        "评论数": 715,
+        "采集量": 106
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 554,
+        "收藏数": 214,
+        "评论数": 86,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 13480,
+        "收藏数": 9363,
+        "评论数": 4194,
+        "采集量": 512
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 2279,
+        "收藏数": 2751,
+        "评论数": 107,
+        "采集量": 10
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 10461,
+        "收藏数": 3676,
+        "评论数": 950,
+        "采集量": 175
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 3375,
+        "收藏数": 1006,
+        "评论数": 390,
+        "采集量": 20
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 7239,
+        "收藏数": 10745,
+        "评论数": 1507,
+        "采集量": 165
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 212,
+        "收藏数": 66,
+        "评论数": 43,
+        "采集量": 27
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 1278,
+        "收藏数": 913,
+        "评论数": 382,
+        "采集量": 27
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 2281,
+        "收藏数": 713,
+        "评论数": 286,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 60,
+        "点赞数": 6026,
+        "收藏数": 5095,
+        "评论数": 355,
+        "采集量": 100
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 861,
+        "收藏数": 407,
+        "评论数": 193,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 530,
+        "收藏数": 186,
+        "评论数": 159,
+        "采集量": 18
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 269,
+        "收藏数": 122,
+        "评论数": 43,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 150,
+        "收藏数": 70,
+        "评论数": 86,
+        "采集量": 24
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 29,
+        "点赞数": 1217,
+        "收藏数": 480,
+        "评论数": 174,
+        "采集量": 78
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 25,
+        "点赞数": 1558,
+        "收藏数": 2308,
+        "评论数": 224,
+        "采集量": 90
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 22726,
+        "收藏数": 8874,
+        "评论数": 2096,
+        "采集量": 196
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 10343,
+        "收藏数": 3011,
+        "评论数": 715,
+        "采集量": 49
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 554,
+        "收藏数": 214,
+        "评论数": 86,
+        "采集量": 13
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 13480,
+        "收藏数": 9363,
+        "评论数": 4194,
+        "采集量": 520
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 2279,
+        "收藏数": 2751,
+        "评论数": 107,
+        "采集量": 10
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 10461,
+        "收藏数": 3676,
+        "评论数": 950,
+        "采集量": 147
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 3375,
+        "收藏数": 1006,
+        "评论数": 390,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 7239,
+        "收藏数": 10745,
+        "评论数": 1507,
+        "采集量": 121
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 212,
+        "收藏数": 66,
+        "评论数": 43,
+        "采集量": 17
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 1278,
+        "收藏数": 913,
+        "评论数": 382,
+        "采集量": 13
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 2281,
+        "收藏数": 713,
+        "评论数": 286,
+        "采集量": 12
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 60,
+        "点赞数": 6026,
+        "收藏数": 5095,
+        "评论数": 355,
+        "采集量": 60
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 861,
+        "收藏数": 407,
+        "评论数": 193,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 530,
+        "收藏数": 186,
+        "评论数": 159,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 269,
+        "收藏数": 122,
+        "评论数": 43,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 150,
+        "收藏数": 70,
+        "评论数": 86,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 29,
+        "点赞数": 1217,
+        "收藏数": 480,
+        "评论数": 174,
+        "采集量": 40
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 25,
+        "点赞数": 1558,
+        "收藏数": 2308,
+        "评论数": 224,
+        "采集量": 46
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 22726,
+        "收藏数": 8874,
+        "评论数": 2096,
+        "采集量": 164
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 10343,
+        "收藏数": 3011,
+        "评论数": 715,
+        "采集量": 80
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 554,
+        "收藏数": 214,
+        "评论数": 86,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 13480,
+        "收藏数": 9363,
+        "评论数": 4194,
+        "采集量": 393
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 10461,
+        "收藏数": 3676,
+        "评论数": 950,
+        "采集量": 85
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 20,
+        "点赞数": 3375,
+        "收藏数": 1006,
+        "评论数": 390,
+        "采集量": 11
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 7239,
+        "收藏数": 10745,
+        "评论数": 1507,
+        "采集量": 153
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 212,
+        "收藏数": 66,
+        "评论数": 43,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 35,
+        "点赞数": 1278,
+        "收藏数": 913,
+        "评论数": 382,
+        "采集量": 34
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 2281,
+        "收藏数": 713,
+        "评论数": 286,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 60,
+        "点赞数": 6026,
+        "收藏数": 5095,
+        "评论数": 355,
+        "采集量": 89
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 861,
+        "收藏数": 407,
+        "评论数": 193,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 530,
+        "收藏数": 186,
+        "评论数": 159,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 269,
+        "收藏数": 122,
+        "评论数": 43,
+        "采集量": 6
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 54,
+        "点赞数": 150,
+        "收藏数": 70,
+        "评论数": 86,
+        "采集量": 31
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 29,
+        "点赞数": 1217,
+        "收藏数": 480,
+        "评论数": 174,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 25,
+        "点赞数": 1558,
+        "收藏数": 2308,
+        "评论数": 224,
+        "采集量": 41
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 37
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 93
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 123
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 11
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 35
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 83
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 81
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 212
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 68
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 210
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 87
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 64
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 97
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 242
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 55
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 129
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 10
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 128
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 74
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 66
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 229
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 94
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 112
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 232
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 76
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 209
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 246
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 136
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 107
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 34
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 223
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 54
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 87
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 143
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 35
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 109
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 14
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 191
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 51
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 69
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 60
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 121
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 102
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 43
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 96
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 36
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 96
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 135
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 50
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 123
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 35
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 55
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 9
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 78
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 64
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 88
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 35
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 99
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 78
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 59
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 62
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 92
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 27
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 166
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 21
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 127
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 53
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 84
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 100
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 59
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 148
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 14
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 99
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 123
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 88
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 96
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 46
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 105
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 13
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 79
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 41
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 61
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 72
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 90
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 83
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 14
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 71
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 11
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 59
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 109
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 60
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 120
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 52
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 28294,
+        "收藏数": 7862,
+        "评论数": 1743,
+        "采集量": 24
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 24873,
+        "收藏数": 16633,
+        "评论数": 1829,
+        "采集量": 34
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 91,
+        "点赞数": 12026,
+        "收藏数": 4527,
+        "评论数": 1110,
+        "采集量": 94
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 6413,
+        "收藏数": 2311,
+        "评论数": 698,
+        "采集量": 40
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 9814,
+        "收藏数": 4179,
+        "评论数": 1032,
+        "采集量": 93
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 28,
+        "点赞数": 5331,
+        "收藏数": 2782,
+        "评论数": 144,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 90,
+        "点赞数": 1657,
+        "收藏数": 1076,
+        "评论数": 274,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 176,
+        "点赞数": 22801,
+        "收藏数": 12365,
+        "评论数": 2488,
+        "采集量": 149
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 142,
+        "点赞数": 11195,
+        "收藏数": 3819,
+        "评论数": 3545,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 60
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 92
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 103
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 88
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 56
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 85
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 201,
+        "点赞数": 16117,
+        "收藏数": 1617,
+        "评论数": 1514,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 57,
+        "点赞数": 40008,
+        "收藏数": 19558,
+        "评论数": 3377,
+        "采集量": 933
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 31836,
+        "收藏数": 16821,
+        "评论数": 8917,
+        "采集量": 238
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 70747,
+        "收藏数": 36142,
+        "评论数": 12200,
+        "采集量": 973
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 98,
+        "点赞数": 85388,
+        "收藏数": 32317,
+        "评论数": 5599,
+        "采集量": 811
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 46,
+        "点赞数": 4407,
+        "收藏数": 5205,
+        "评论数": 2151,
+        "采集量": 1529
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 43,
+        "点赞数": 22234,
+        "收藏数": 7589,
+        "评论数": 10438,
+        "采集量": 205
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 69632,
+        "收藏数": 34228,
+        "评论数": 5504,
+        "采集量": 417
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 31,
+        "点赞数": 4068,
+        "收藏数": 1410,
+        "评论数": 320,
+        "采集量": 125
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 2222,
+        "收藏数": 1056,
+        "评论数": 290,
+        "采集量": 71
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 22,
+        "点赞数": 11840,
+        "收藏数": 4192,
+        "评论数": 532,
+        "采集量": 53
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 57,
+        "点赞数": 40008,
+        "收藏数": 19558,
+        "评论数": 3377,
+        "采集量": 929
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 31836,
+        "收藏数": 16821,
+        "评论数": 8917,
+        "采集量": 305
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 70747,
+        "收藏数": 36142,
+        "评论数": 12200,
+        "采集量": 810
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 98,
+        "点赞数": 85388,
+        "收藏数": 32317,
+        "评论数": 5599,
+        "采集量": 664
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 46,
+        "点赞数": 4407,
+        "收藏数": 5205,
+        "评论数": 2151,
+        "采集量": 1261
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 43,
+        "点赞数": 22234,
+        "收藏数": 7589,
+        "评论数": 10438,
+        "采集量": 276
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 69632,
+        "收藏数": 34228,
+        "评论数": 5504,
+        "采集量": 299
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 31,
+        "点赞数": 4068,
+        "收藏数": 1410,
+        "评论数": 320,
+        "采集量": 70
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 2222,
+        "收藏数": 1056,
+        "评论数": 290,
+        "采集量": 57
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 22,
+        "点赞数": 11840,
+        "收藏数": 4192,
+        "评论数": 532,
+        "采集量": 65
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 57,
+        "点赞数": 40008,
+        "收藏数": 19558,
+        "评论数": 3377,
+        "采集量": 1154
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 31836,
+        "收藏数": 16821,
+        "评论数": 8917,
+        "采集量": 491
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 70747,
+        "收藏数": 36142,
+        "评论数": 12200,
+        "采集量": 859
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 98,
+        "点赞数": 85388,
+        "收藏数": 32317,
+        "评论数": 5599,
+        "采集量": 765
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 46,
+        "点赞数": 4407,
+        "收藏数": 5205,
+        "评论数": 2151,
+        "采集量": 1533
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 43,
+        "点赞数": 22234,
+        "收藏数": 7589,
+        "评论数": 10438,
+        "采集量": 278
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 69632,
+        "收藏数": 34228,
+        "评论数": 5504,
+        "采集量": 482
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 31,
+        "点赞数": 4068,
+        "收藏数": 1410,
+        "评论数": 320,
+        "采集量": 92
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 2222,
+        "收藏数": 1056,
+        "评论数": 290,
+        "采集量": 31
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 22,
+        "点赞数": 11840,
+        "收藏数": 4192,
+        "评论数": 532,
+        "采集量": 49
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 57,
+        "点赞数": 40008,
+        "收藏数": 19558,
+        "评论数": 3377,
+        "采集量": 1253
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 31836,
+        "收藏数": 16821,
+        "评论数": 8917,
+        "采集量": 361
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 65,
+        "点赞数": 70747,
+        "收藏数": 36142,
+        "评论数": 12200,
+        "采集量": 752
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 98,
+        "点赞数": 85388,
+        "收藏数": 32317,
+        "评论数": 5599,
+        "采集量": 712
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 46,
+        "点赞数": 4407,
+        "收藏数": 5205,
+        "评论数": 2151,
+        "采集量": 1584
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 43,
+        "点赞数": 22234,
+        "收藏数": 7589,
+        "评论数": 10438,
+        "采集量": 235
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 69632,
+        "收藏数": 34228,
+        "评论数": 5504,
+        "采集量": 268
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 31,
+        "点赞数": 4068,
+        "收藏数": 1410,
+        "评论数": 320,
+        "采集量": 40
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 15,
+        "点赞数": 2222,
+        "收藏数": 1056,
+        "评论数": 290,
+        "采集量": 68
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 22,
+        "点赞数": 11840,
+        "收藏数": 4192,
+        "评论数": 532,
+        "采集量": 42
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 51
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 12
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 150
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 105
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 18
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 40
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 1
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 120
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 101
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 121
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 113
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 20
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 62
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 123
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 107
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 6
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 17
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 21
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 31
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 129
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 146
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 13
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 29
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 166
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 158
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 6
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 33
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 19
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 214
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 183
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 52
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 9
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 41
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 193
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 135
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 15
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 28
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 119
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 240
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 24
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 58
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 104
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 128
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 21
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 31
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 70
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 103
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 13
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 6
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 10
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 134
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 217
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 5
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 24
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 29
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 67
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 106
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 8
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 37
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 4
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 30
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 12
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 92
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 130
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 9
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 37
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 28
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 93,
+        "点赞数": 13565,
+        "收藏数": 6047,
+        "评论数": 1225,
+        "采集量": 2
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 85,
+        "点赞数": 29128,
+        "收藏数": 7084,
+        "评论数": 1571,
+        "采集量": 16
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 4,
+        "点赞数": 5,
+        "收藏数": 5,
+        "评论数": 1,
+        "采集量": 0
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 47,
+        "点赞数": 6372,
+        "收藏数": 3325,
+        "评论数": 2853,
+        "采集量": 3
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 179,
+        "点赞数": 33830,
+        "收藏数": 12429,
+        "评论数": 2659,
+        "采集量": 71
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 113,
+        "点赞数": 27630,
+        "收藏数": 24537,
+        "评论数": 3734,
+        "采集量": 84
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 49,
+        "点赞数": 2554,
+        "收藏数": 690,
+        "评论数": 329,
+        "采集量": 6
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 68,
+        "点赞数": 35648,
+        "收藏数": 12319,
+        "评论数": 1722,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 105,
+        "点赞数": 4140,
+        "收藏数": 2535,
+        "评论数": 557,
+        "采集量": 7
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 287
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 251
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 95
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 18
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 235
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 390
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 73
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 32
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 191
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 321
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 38
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 20
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 197
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 506
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 91
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 234
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 539
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 66
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 242
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 452
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 35
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 25
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 167
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 316
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 61
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 23
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 158
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 284
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 73
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 12
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 155
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 502
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 56
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 14
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 193
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 345
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 192
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 28
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 177
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 310
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 141
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 40
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 164
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 203
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 75
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 168
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 250
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 89
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 28
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 263
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 239
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 134
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 24
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 40,
+        "点赞数": 1928,
+        "收藏数": 1336,
+        "评论数": 1098,
+        "采集量": 360
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 30,
+        "点赞数": 4644,
+        "收藏数": 2481,
+        "评论数": 605,
+        "采集量": 335
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 51,
+        "点赞数": 5122,
+        "收藏数": 2328,
+        "评论数": 949,
+        "采集量": 76
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 59,
+        "点赞数": 2764,
+        "收藏数": 1285,
+        "评论数": 922,
+        "采集量": 12
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 129
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 58
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 75
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 14
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 39
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 70
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 54
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 76
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 90
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 67
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 147,
+        "点赞数": 15873,
+        "收藏数": 9767,
+        "评论数": 1025,
+        "采集量": 26
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 186
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 236
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 213
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 65
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 184
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 378
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 230
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 287
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 210
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 184
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 84,
+        "点赞数": 6814,
+        "收藏数": 5007,
+        "评论数": 853,
+        "采集量": 81
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 162
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 148
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 122
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 37
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 129
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 217
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 143
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 171
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 154
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 130
+      },
+      {
+        "采集天数": 1,
+        "笔记数": 255,
+        "点赞数": 10855,
+        "收藏数": 9212,
+        "评论数": 661,
+        "采集量": 53
+      }
+    ]
   }
 }
