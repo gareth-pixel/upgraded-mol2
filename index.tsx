@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { injectSpeedInsights } from '@vercel/speed-insights';
+import { Analytics } from '@vercel/analytics/react';
 import App from './App';
 
 injectSpeedInsights();
@@ -14,5 +15,6 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <App />
+    <Analytics />
   </React.StrictMode>
 );
